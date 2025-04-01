@@ -1,0 +1,4 @@
+*
+!services/demo-user-service/src
+!services/demo-user-service/package.json
+!services/demo-user-service/tsconfig.json
