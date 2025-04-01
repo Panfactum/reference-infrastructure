@@ -11,7 +11,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <spark.version>2.9.3</spark.version>
-        <postgres.version>42.2.20</postgres.version>
+        <postgres.version>42.3.9</postgres.version>
         <jooq.version>3.15.0</jooq.version>
         <dotenv.version>2.0.1</dotenv.version>
     </properties>
