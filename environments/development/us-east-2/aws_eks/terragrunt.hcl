@@ -18,7 +18,7 @@ inputs = {
   cluster_name        = "development-primary"
   cluster_description = "Panfactum Kubernetes cluster for the development environment"
 
-  bootstrap_mode_enabled = true # Set this to true when you are completing the bootstrap guide
+  bootstrap_mode_enabled = false # Set this to true when you are completing the bootstrap guide
   node_subnets = [
     "PRIVATE_A"
   ]
