@@ -10,3 +10,4 @@ extra_inputs:
   panfactum_scheduler_enabled: true
   monitoring_enabled: false
   pull_through_cache_enabled: true
+pf_stack_version: "edge.25-03-04"

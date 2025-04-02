@@ -9,3 +9,4 @@ extra_inputs:
   pull_through_cache_enabled: true
 kube_config_context: development-primary
 kube_api_server: https://6B4CCB112AD882D9331473BA90CB8F80.yl4.us-east-2.eks.amazonaws.com
+vault_addr: https://vault.dev.panfactum.com
