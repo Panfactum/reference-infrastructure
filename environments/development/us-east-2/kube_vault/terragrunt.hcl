@@ -13,7 +13,7 @@ dependency "ebs_csi" {
 }
 
 inputs = {
-  ingress_enabled = false
+  ingress_enabled = true
   vault_domain    = "vault.dev.panfactum.com"
   wait            = true
 }
