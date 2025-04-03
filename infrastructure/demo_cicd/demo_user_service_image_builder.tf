@@ -6,7 +6,7 @@ module "demo_user_service_builder" {
   pull_through_cache_enabled = var.pull_through_cache_enabled
 
   code_repo = "github.com/panfactum/reference-infrastructure.git"
-  dockerfile_path = "./packages/reference/services/demo-user-service/Containerfile"
+  dockerfile_path = "./services/demo-user-service/Containerfile"
   image_repo = "demo-user-service"
 
   args = {}

@@ -53,7 +53,7 @@ module "sensor" {
           {
             path = "body.repository.name"
             type = "string"
-            value = ["reference"]
+            value = ["reference-infrastructure"]
           }
         ]
       }
@@ -78,14 +78,14 @@ module "sensor" {
           {
             path = "body.repository.name"
             type = "string"
-            value = ["reference"]
+            value = ["reference-infrastructure"]
           }
         ]
         script = <<-EOT
         ${file("${path.module}/is_modified.lua")}
         return is_modified(event.body, {
-          "packages/reference/infrastructure/demo_cicd/.*",
-          "packages/reference/environments/.*"
+          "infrastructure/demo_cicd/.*",
+          "environments/.*"
         })
         EOT
       }

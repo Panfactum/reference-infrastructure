@@ -14,7 +14,7 @@ RUN npm i -g pnpm@9.14.2
 
 # Install Dependencies
 COPY package.json pnpm-lock.yaml .npmrc pnpm-workspace.yaml .
-COPY packages/reference/services/demo-user-service/package.json packages/reference/services/demo-user-service/
+COPY services/demo-user-service/package.json services/demo-user-service/
 RUN --mount=type=cache,id=pnpm,target=/code/.pnpm pnpm install --frozen-lockfile
 
 #################################################
@@ -22,8 +22,8 @@ RUN --mount=type=cache,id=pnpm,target=/code/.pnpm pnpm install --frozen-lockfile
 #################################################
 
 FROM deps AS development
-WORKDIR /code/packages/reference/services/demo-user-service
-COPY packages/reference/services/demo-user-service/ .
+WORKDIR /code/services/demo-user-service
+COPY services/demo-user-service/ .
 RUN npx ncc build src/main.ts -o dist
 
 #################################################
@@ -32,8 +32,8 @@ RUN npx ncc build src/main.ts -o dist
 
 FROM deps AS builder
 ENV NODE_ENV=production
-WORKDIR /code/packages/reference/services/demo-user-service
-COPY packages/reference/services/demo-user-service/ .
+WORKDIR /code/services/demo-user-service
+COPY services/demo-user-service/ .
 RUN npx ncc build src/main.ts -o dist
 
 #################################################
@@ -42,5 +42,5 @@ RUN npx ncc build src/main.ts -o dist
 
 FROM base AS production
 ENV NODE_ENV=production
-WORKDIR /code/packages/reference/services/demo-user-service
-COPY --from=builder /code/packages/reference/services/demo-user-service/dist ./
+WORKDIR /code/services/demo-user-service
+COPY --from=builder /code/services/demo-user-service/dist ./
