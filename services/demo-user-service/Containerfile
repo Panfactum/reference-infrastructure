@@ -13,7 +13,6 @@ FROM base AS deps
 RUN npm i -g pnpm@9.14.2
 
 # Install Dependencies
-COPY package.json pnpm-lock.yaml .npmrc pnpm-workspace.yaml .
 COPY services/demo-user-service/package.json services/demo-user-service/
 RUN --mount=type=cache,id=pnpm,target=/code/.pnpm pnpm install --frozen-lockfile
 

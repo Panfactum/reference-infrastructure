@@ -16,7 +16,7 @@ inputs = {
   namespace = "demo-python-service"
 
   domain               = "demo.panfactum.com"
-  image_version        = run_cmd("--terragrunt-quiet", "pf-get-commit-hash", "--ref=main", "--repo=https://github.com/panfactum/stack")
+  image_version        = run_cmd("--terragrunt-quiet", "pf-get-commit-hash", "--ref=main", "--repo=https://github.com/panfactum/reference-infrastructure")
   healthcheck_route    = "/health"
   db_name              = "postgres"
   db_schema            = "public"
