@@ -10,6 +10,25 @@ module "sensor" {
   namespace = local.namespace
 
   dependencies = [
+        {
+      name = "push"
+      eventSourceName = local.event_source_name
+      eventName = "default"
+      filters = {
+        data = [
+          {
+            path = "body.X-GitHub-Event"
+            type = "string"
+            value = ["push"]
+          },
+          {
+            path = "body.repository.name"
+            type = "string"
+            value = ["stack"]
+          }
+        ]
+      }
+    },
     {
       name = "push-to-main"
       eventSourceName = local.event_source_name
@@ -281,7 +300,7 @@ module "sensor" {
     {
       template = {
         name = module.module_uploader_workflow.name
-        conditions = "push-to-main"
+        conditions = "push"
         argoWorkflow = {
           operation = "submit"
           source = {
@@ -304,7 +323,7 @@ module "sensor" {
             {
               dest = "spec.arguments.parameters.0.value"
               src = {
-                dependencyName = "push-to-main"
+                dependencyName = "push"
                 dataKey = "body.after" # The git commit after the push
               }
             }
