@@ -5,8 +5,8 @@ module "tf_deploy" {
   name                       = "tf-deploy-prod"
   namespace                  = local.namespace
 
-  repo         = "github.com/panfactum/stack.git"
-  tf_apply_dir = "packages/reference/environments/production"
+  repo         = "github.com/panfactum/reference-infrastructure.git"
+  tf_apply_dir = "environments/production"
   secrets = {
     AUTHENTIK_TOKEN           = var.authentik_token
     MONGODB_ATLAS_PUBLIC_KEY  = var.mongodb_atlas_public_key

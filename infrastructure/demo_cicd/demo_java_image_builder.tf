@@ -6,9 +6,9 @@ module "demo_java_service_builder" {
   pull_through_cache_enabled = var.pull_through_cache_enabled
   amd_builder_enabled = false
 
-  code_repo = "github.com/panfactum/stack.git"
-  dockerfile_path = "./packages/reference/services/demo-java-service/Containerfile"
-  build_context = "./packages/reference/services/demo-java-service"
+  code_repo = "github.com/panfactum/reference-infrastructure.git"
+  dockerfile_path = "./services/demo-java-service/Containerfile"
+  build_context = "./services/demo-java-service"
   image_repo = "demo-java-service"
 
   args = {}
@@ -29,7 +29,7 @@ module "build_and_deploy_demo_java_service_workflow" {
     },
     {
       name = "tf_apply_dir"
-      value = "packages/reference/environments/production/us-east-2/demo_java_service"
+      value = "environments/production/us-east-2/demo_java_service"
     }
   ]
 

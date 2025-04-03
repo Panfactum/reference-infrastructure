@@ -42,7 +42,7 @@ module "event_source" {
         repositories = [
           {
             owner = "panfactum"
-            names = ["stack"]
+            names = ["stack", "reference-infrastructure"]
           }
         ]
         webhook = {

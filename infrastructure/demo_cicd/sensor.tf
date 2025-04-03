@@ -25,6 +25,35 @@ module "sensor" {
             path = "body.ref"
             type = "string"
             value = ["refs/heads/main"]
+          },
+          {
+            path = "body.repository.name"
+            type = "string"
+            value = ["stack"]
+          }
+        ]
+      }
+    },
+    {
+      name = "push-to-main-reference"
+      eventSourceName = local.event_source_name
+      eventName = "default"
+      filters = {
+        data = [
+          {
+            path = "body.X-GitHub-Event"
+            type = "string"
+            value = ["push"]
+          },
+          {
+            path = "body.ref"
+            type = "string"
+            value = ["refs/heads/main"]
+          },
+          {
+            path = "body.repository.name"
+            type = "string"
+            value = ["reference"]
           }
         ]
       }
@@ -45,6 +74,11 @@ module "sensor" {
             path = "body.ref"
             type = "string"
             value = ["refs/heads/test"]
+          },
+          {
+            path = "body.repository.name"
+            type = "string"
+            value = ["reference"]
           }
         ]
         script = <<-EOT
@@ -213,7 +247,7 @@ module "sensor" {
     {
       template = {
         name = module.resource_update_workflow.name
-        conditions = "push-to-main"
+        conditions = "push-to-main-reference"
         argoWorkflow = {
           operation = "submit"
           source = {
@@ -282,7 +316,7 @@ module "sensor" {
     {
       template = {
         name = module.build_and_deploy_demo_user_service_workflow.name
-        conditions = "push-to-main"
+        conditions = "push-to-main-reference"
         argoWorkflow = {
           operation = "submit"
           source = {
@@ -307,7 +341,7 @@ module "sensor" {
     {
       template = {
         name = module.build_and_deploy_demo_tracker_service_workflow.name
-        conditions = "push-to-main"
+        conditions = "push-to-main-reference"
         argoWorkflow = {
           operation = "submit"
           source = {
@@ -332,7 +366,7 @@ module "sensor" {
     {
       template = {
         name = module.build_and_deploy_demo_python_service_workflow.name
-        conditions = "push-to-main"
+        conditions = "push-to-main-reference"
         argoWorkflow = {
           operation = "submit"
           source = {
@@ -357,7 +391,7 @@ module "sensor" {
     {
       template = {
         name = module.build_and_deploy_demo_java_service_workflow.name
-        conditions = "push-to-main"
+        conditions = "push-to-main-reference"
         argoWorkflow = {
           operation = "submit"
           source = {

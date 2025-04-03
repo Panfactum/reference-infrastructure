@@ -5,7 +5,7 @@ module "demo_user_service_builder" {
   namespace = local.namespace
   pull_through_cache_enabled = var.pull_through_cache_enabled
 
-  code_repo = "github.com/panfactum/stack.git"
+  code_repo = "github.com/panfactum/reference-infrastructure.git"
   dockerfile_path = "./packages/reference/services/demo-user-service/Containerfile"
   image_repo = "demo-user-service"
 
@@ -27,7 +27,7 @@ module "build_and_deploy_demo_user_service_workflow" {
     },
     {
       name = "tf_apply_dir"
-      value = "packages/reference/environments/production/us-east-2/demo_user_service"
+      value = "environments/production/us-east-2/demo_user_service"
     }
   ]
 

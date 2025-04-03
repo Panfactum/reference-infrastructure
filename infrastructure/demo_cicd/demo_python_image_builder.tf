@@ -5,9 +5,9 @@ module "demo_python_service_builder" {
   namespace = local.namespace
   pull_through_cache_enabled = var.pull_through_cache_enabled
 
-  code_repo = "github.com/panfactum/stack.git"
-  dockerfile_path = "./packages/reference/services/demo-python-service/Containerfile"
-  build_context = "./packages/reference/services/demo-python-service"
+  code_repo = "github.com/panfactum/reference-infrastructure.git"
+  dockerfile_path = "./services/demo-python-service/Containerfile"
+  build_context = "./services/demo-python-service"
   image_repo = "demo-python-service"
 
   args = {}
@@ -28,7 +28,7 @@ module "build_and_deploy_demo_python_service_workflow" {
     },
     {
       name = "tf_apply_dir"
-      value = "packages/reference/environments/production/us-east-2/demo_python_service"
+      value = "environments/production/us-east-2/demo_python_service"
     }
   ]
 
