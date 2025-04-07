@@ -31,3 +31,12 @@ module "website" {
   }]
 }
 
+module "installer" {
+  source = "${var.pf_module_source}aws_s3_public_website${var.pf_module_ref}"
+  providers = {
+    aws.global = aws.global
+  }
+  bucket_name = "pf-framework-installer"
+  description = "Hosts the Panfactum installer scripts"
+  domains      = ["install.panfactum.com"]
+}

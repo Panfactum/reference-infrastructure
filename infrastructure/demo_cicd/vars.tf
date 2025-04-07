@@ -95,6 +95,11 @@ variable "pf_module_ref" {
 }
 
 variable "module_bucket" {
-  description = "The S3 bucket that host tf modules"
+  description = "The S3 bucket that hosts tf modules"
+  type = string
+}
+
+variable "installer_bucket" {
+  description = "The S3 bucket that hosts the Panfactum installer scripts"
   type = string
 }

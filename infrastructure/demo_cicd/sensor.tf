@@ -10,7 +10,7 @@ module "sensor" {
   namespace = local.namespace
 
   dependencies = [
-        {
+    {
       name = "push"
       eventSourceName = local.event_source_name
       eventName = "default"
@@ -25,6 +25,30 @@ module "sensor" {
             path = "body.repository.name"
             type = "string"
             value = ["stack"]
+          }
+        ]
+      }
+    },
+    {
+      name = "tag"
+      eventSourceName = local.event_source_name
+      eventName = "default"
+      filters = {
+        data = [
+          {
+            path = "body.X-GitHub-Event"
+            type = "string"
+            value = ["create"]
+          },
+          {
+            path = "body.repository.name"
+            type = "string"
+            value = ["stack"]
+          },
+          {
+            path = "body.ref_type"
+            type = "string"
+            value = ["tag"]
           }
         ]
       }
@@ -332,6 +356,88 @@ module "sensor" {
       }
     },
 
+    {
+      template = {
+        name = module.installer_uploader_workflow.name
+        conditions = "tag"
+        argoWorkflow = {
+          operation = "submit"
+          source = {
+            resource = {
+              apiVersion = "argoproj.io/v1alpha1"
+              kind = "Workflow"
+              metadata = {
+                generateName = module.installer_uploader_workflow.generate_name
+                namespace = local.namespace
+              }
+              spec = {
+                arguments = module.installer_uploader_workflow.arguments
+                workflowTemplateRef = {
+                  name = module.installer_uploader_workflow.name
+                }
+              }
+            }
+          }
+          parameters = [
+            {
+              dest = "spec.arguments.parameters.0.value"
+              src = {
+                dependencyName = "tag"
+                dataKey = "body.ref"
+              }
+            },
+            {
+              dest = "spec.arguments.parameters.1.value"
+              src = {
+                dependencyName = "tag"
+                value = "1"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      template = {
+        name = "${module.installer_uploader_workflow.name}-push"
+        conditions = "push"
+        argoWorkflow = {
+          operation = "submit"
+          source = {
+            resource = {
+              apiVersion = "argoproj.io/v1alpha1"
+              kind = "Workflow"
+              metadata = {
+                generateName = module.installer_uploader_workflow.generate_name
+                namespace = local.namespace
+              }
+              spec = {
+                arguments = module.installer_uploader_workflow.arguments
+                workflowTemplateRef = {
+                  name = module.installer_uploader_workflow.name
+                }
+              }
+            }
+          }
+          parameters = [
+            {
+              dest = "spec.arguments.parameters.0.value"
+              src = {
+                dependencyName = "push"
+                dataKey = "body.after"
+              }
+            },
+            {
+              dest = "spec.arguments.parameters.1.value"
+              src = {
+                dependencyName = "push"
+                value = "0"
+              }
+            }
+          ]
+        }
+      }
+    },
     {
       template = {
         name = module.build_and_deploy_demo_user_service_workflow.name

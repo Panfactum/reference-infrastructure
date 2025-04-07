@@ -19,6 +19,10 @@ dependency "module_bucket" {
   config_path = "../pf_modules_site"
 }
 
+dependency "installer_bucket" {
+  config_path = "../pf_website"
+}
+
 inputs = {
   github_username           = "fullykubed"
   github_token              = local.secrets.github_token
@@ -36,6 +40,7 @@ inputs = {
   site_url                  = "https://panfactum.com"
   scraper_image_version     = "586d06cee96633a26ffe0ce318d85f26c3f7c27d"
   module_bucket             = dependency.module_bucket.outputs.bucket_name
+  installer_bucket          = dependency.installer_bucket.outputs.installer_bucket_name
 }
 
 skip = get_env("CI", "false") == "true"
