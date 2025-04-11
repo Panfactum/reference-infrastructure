@@ -22,7 +22,7 @@ dependency "lb_controller" {
 }
 
 inputs = {
-  ingress_domains         = ["dev.panfactum.com", "development.panfactum.com"]
+  ingress_domains         = ["dev.panfactum.com"]
   dhparam                 = local.secrets.dhparam
   ingress_timeout_seconds = 60
 

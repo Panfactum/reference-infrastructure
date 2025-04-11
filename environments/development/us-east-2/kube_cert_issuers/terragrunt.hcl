@@ -30,10 +30,6 @@ inputs = {
       zone_id                 = "Z061599010VQ7E1NYZA52"
       record_manager_role_arn = "arn:aws:iam::471112902605:role/route53-record-manager-20240405144117207000000006"
     }
-    "development.panfactum.com" = {
-      zone_id                 = "Z00914472Z7HO5DHUBPV1"
-      record_manager_role_arn = "arn:aws:iam::471112902605:role/route53-record-manager-20240405144117207000000006"
-    }
   }
 }
 
