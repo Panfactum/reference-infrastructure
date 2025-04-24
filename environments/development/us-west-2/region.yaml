@@ -1,0 +1,9 @@
+sla_target: 1
+extra_tags: {}
+region: us-west-2
+extra_inputs:
+  pull_through_cache_enabled: true
+aws_region: us-west-2
+aws_secondary_region: us-west-1
+kube_api_server: https://9698FFDDC95ABA7D04AF68E476F1E80B.gr7.us-west-2.eks.amazonaws.com
+kube_config_context: development-us-west-2

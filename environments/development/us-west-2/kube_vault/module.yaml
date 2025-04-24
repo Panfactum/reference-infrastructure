@@ -1,0 +1,4 @@
+extra_inputs:
+  vault_domain: vault.us-west-2.development.panfactum.com
+  wait: true
+  ingress_enabled: false
