@@ -1,0 +1,3 @@
+extra_inputs:
+  name: sops-pf-test-71
+module: aws_kms_encrypt_key

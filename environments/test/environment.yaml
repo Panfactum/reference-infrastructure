@@ -1,0 +1,9 @@
+extra_tags: {}
+extra_inputs: {}
+pf_stack_version: main
+tf_state_region: us-east-1
+tf_state_bucket: tf-test-qql804sv
+tf_state_lock_table: tf-test-qql804sv
+aws_account_id: "471112902605"
+aws_profile: development-superuser
+environment_subdomain: test

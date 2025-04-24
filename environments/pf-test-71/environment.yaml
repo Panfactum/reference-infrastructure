@@ -1,0 +1,7 @@
+environment: pf-test-71
+aws_account_id: "565934498888"
+aws_profile: pf-test-71-superuser
+pf_stack_version: main
+tf_state_bucket: tf-pf-test-71-lnpz6vrt
+tf_state_lock_table: tf-pf-test-71-lnpz6vrt
+tf_state_region: us-east-1

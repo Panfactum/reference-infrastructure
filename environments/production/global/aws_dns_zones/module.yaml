@@ -1,0 +1,12 @@
+extra_inputs:
+  domains:
+    test123.panfactum.com:
+      dnssec_enabled: true
+    test1234.panfactum.com:
+      dnssec_enabled: true
+    pftest12345.panfactum.com:
+      dnssec_enabled: true
+    pftest123456.panfactum.com:
+      dnssec_enabled: true
+    panfactum.ai:
+      dnssec_enabled: false

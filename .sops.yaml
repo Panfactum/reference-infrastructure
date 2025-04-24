@@ -1,10 +1,22 @@
 creation_rules:
   - path_regex: .*/management/.*
     aws_profile: management-superuser
-    kms: 'arn:aws:kms:us-east-2:143003111016:key/mrk-955687aaf5124a07837ae4e2a442f8ec,arn:aws:kms:us-west-2:143003111016:key/mrk-955687aaf5124a07837ae4e2a442f8ec'
+    kms: arn:aws:kms:us-east-2:143003111016:key/mrk-955687aaf5124a07837ae4e2a442f8ec,arn:aws:kms:us-west-2:143003111016:key/mrk-955687aaf5124a07837ae4e2a442f8ec
   - path_regex: .*/development/.*
     aws_profile: development-superuser
-    kms: 'arn:aws:kms:us-east-2:471112902605:key/mrk-9cb675458a2b480ba6df9162e0122dee,arn:aws:kms:us-west-2:471112902605:key/mrk-9cb675458a2b480ba6df9162e0122dee'
+    kms: arn:aws:kms:us-east-2:471112902605:key/mrk-9cb675458a2b480ba6df9162e0122dee,arn:aws:kms:us-west-2:471112902605:key/mrk-9cb675458a2b480ba6df9162e0122dee
   - path_regex: .*/production/.*
     aws_profile: production-superuser
-    kms: 'arn:aws:kms:us-east-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c,arn:aws:kms:us-west-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c'
+    kms: arn:aws:kms:us-east-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c,arn:aws:kms:us-west-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c
+  - path_regex: .*/test/.*
+    aws_profile: development-superuser
+    kms: arn:aws:kms:us-east-1:471112902605:key/mrk-0f6732203c8d43dfb8d764dd2b89bb8a,arn:aws:kms:us-east-2:471112902605:key/mrk-0f6732203c8d43dfb8d764dd2b89bb8a
+  - path_regex: .*/pf-test-6/.*
+    aws_profile: pf-test-6-superuser
+    kms: arn:aws:kms:us-east-1:195287220387:key/mrk-a0b1975df50c4ceeb2a4b857666dfeb2,arn:aws:kms:us-east-2:195287220387:key/mrk-a0b1975df50c4ceeb2a4b857666dfeb2
+  - path_regex: .*/pf-test-53/.*
+    aws_profile: pf-test-53-superuser
+    kms: arn:aws:kms:us-east-1:257086469067:key/mrk-001d2f561cfc4bf39d111b920182400b,arn:aws:kms:us-east-2:257086469067:key/mrk-001d2f561cfc4bf39d111b920182400b
+  - path_regex: .*/pf-test-71/.*
+    aws_profile: pf-test-71-superuser
+    kms: arn:aws:kms:us-east-1:565934498888:key/mrk-47ba621878eb4868b1d4c88d14f07b4e,arn:aws:kms:us-east-2:565934498888:key/mrk-47ba621878eb4868b1d4c88d14f07b4e
