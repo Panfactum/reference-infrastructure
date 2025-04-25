@@ -25,6 +25,18 @@ extra_inputs:
           - ns-1415.awsdns-48.org
           - ns-1979.awsdns-55.co.uk
           - ns-628.awsdns-14.net
+      - subdomain: jack
+        name_servers:
+          - ns-856.awsdns-43.net
+          - ns-1197.awsdns-21.org
+          - ns-105.awsdns-13.com
+          - ns-1603.awsdns-08.co.uk
+      - subdomain: jack2
+        name_servers:
+          - ns-1170.awsdns-18.org
+          - ns-369.awsdns-46.com
+          - ns-696.awsdns-23.net
+          - ns-1680.awsdns-18.co.uk
     panfactum.ai:
       - subdomain: dev
         name_servers:
