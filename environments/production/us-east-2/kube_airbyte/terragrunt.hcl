@@ -28,4 +28,8 @@ inputs = {
   connected_s3_bucket_arns = [
     dependency.s3_destination.outputs.bucket_arn
   ]
+
+  temporal_min_memory_mb = 1000
+  temporal_min_cpu_milicores = 300
+  pg_min_memory_mb = 1000
 }

@@ -1,8 +1,8 @@
 {
   inputs = {
     flake-utils.url = "github:numtide/flake-utils"; # Utility for generating flakes that are compatible with all operating systems
-    #panfactum.url = "github:panfactum/stack/main";
-    panfactum.url = "path:/home/jack/repos/panfactum/stack"; # When developing locally, use this to test changes, but don't forget to change it back before committing!
+    panfactum.url = "github:panfactum/stack/main";
+    #panfactum.url = "path:/home/jack/repos/panfactum/stack"; # When developing locally, use this to test changes, but don't forget to change it back before committing!
   };
 
   outputs =

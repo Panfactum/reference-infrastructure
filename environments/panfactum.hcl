@@ -12,7 +12,7 @@ locals {
   # see https://panfactum.com/docs/edge/reference/configuration/terragrunt-variables
   ############################################################################################
 
-  vars = jsondecode(run_cmd("--terragrunt-global-cache", "--terragrunt-quiet", "pf", "config", "get"))
+  vars = jsondecode(run_cmd("--terragrunt-quiet", "pf", "config", "get"))
   extra_inputs = local.vars.extra_inputs
   extra_tags = local.vars.extra_tags
 
@@ -42,6 +42,7 @@ locals {
 
   # The module to deploy - This logic is used BOTH for Panfactum modules and first-party IaC
   module = lookup(local.vars, "module", basename(get_original_terragrunt_dir()))
+  #module = basename(get_original_terragrunt_dir())
 
   # Inspect the terragrunt.hcl that includes this shared file. If it uses the 'pf_stack_source'
   # local, that means it is almost certainly deploying a Panfactum module directly (vs a first-party IaC module)

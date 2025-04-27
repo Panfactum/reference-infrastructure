@@ -49,3 +49,15 @@ extra_inputs:
         - restricted_engineers
       billing_admin_groups:
         - billing_admins
+    james-6:
+      account_id: "399184192941"
+      superuser_groups:
+        - superusers
+      admin_groups:
+        - privileged_engineers
+      reader_groups:
+        - engineers
+      restricted_reader_groups:
+        - restricted_engineers
+      billing_admin_groups:
+        - billing_admins

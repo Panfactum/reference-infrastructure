@@ -1,0 +1,7 @@
+environment: james
+aws_account_id: "172317227944"
+aws_profile: james-superuser
+pf_stack_version: main
+tf_state_bucket: tf-james-w3ah2eeo
+tf_state_lock_table: tf-james-w3ah2eeo
+tf_state_region: us-east-2

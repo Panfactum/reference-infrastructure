@@ -1,0 +1,7 @@
+extra_inputs:
+  alert_email: james+6@panfactum.com
+  kube_domain: prod.james.panfactum.com
+  route53_zones:
+    james.panfactum.com:
+      zone_id: Z037489820IILHUKFYJ3B
+      record_manager_role_arn: arn:aws:iam::399184192941:role/route53-record-manager-20250425161908094900000004

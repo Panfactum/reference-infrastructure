@@ -1,0 +1,4 @@
+extra_inputs:
+  domains:
+    james.panfactum.com:
+      dnssec_enabled: true

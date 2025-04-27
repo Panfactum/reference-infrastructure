@@ -1,0 +1,5 @@
+extra_inputs:
+  bootstrap_mode_enabled: false
+  cluster_name: james-6-us-east-2
+  cluster_description: Panfactum Kubernetes cluster in the us-east-2 region of the
+    james-6 environment

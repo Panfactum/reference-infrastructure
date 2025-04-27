@@ -20,6 +20,7 @@ provider "registry.opentofu.org/alekc/kubectl" {
     "zh:df108339a89d4372e5b13f77bd9d53c02a04362fb5d85e1d9b6b47292e30821c",
     "zh:e8a2e3a5c50ca124e6014c361d72a9940d8e815f37ae2d1e9487ac77c3043013",
   ]
+  constraints = "2.1.3"
 }
 
 provider "registry.opentofu.org/hashicorp/aws" {
@@ -55,6 +56,7 @@ provider "registry.opentofu.org/hashicorp/kubernetes" {
     "zh:e87d8edc93920b75b88e7fb8d1a7941f2b7facc89931b72e4c74fcf137baee91",
     "zh:f173c9c66edb046715db10adce1d603fe989a3634b26bb81d556de3de548bd94",
   ]
+  constraints = "2.36.0"
 }
 
 provider "registry.opentofu.org/hashicorp/random" {

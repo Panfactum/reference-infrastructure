@@ -1,0 +1,13 @@
+environment: james-6
+pf_stack_version: main
+tf_state_region: us-east-2
+tf_state_bucket: tf-james-6-tvuv3k3j
+tf_state_lock_table: tf-james-6-tvuv3k3j
+aws_account_id: "399184192941"
+aws_profile: james-6-superuser
+domains:
+  james.panfactum.com:
+    zone_id: Z037489820IILHUKFYJ3B
+    record_manager_role_arn: arn:aws:iam::399184192941:role/route53-record-manager-20250425161908094900000004
+extra_inputs: {}
+extra_tags: {}
