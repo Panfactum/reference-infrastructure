@@ -1,7 +1,0 @@
-environment: james-4
-aws_account_id: "988570600893"
-aws_profile: james-4-superuser
-pf_stack_version: main
-tf_state_bucket: tf-james-4-c91ru28z
-tf_state_lock_table: tf-james-4-c91ru28z
-tf_state_region: us-east-2

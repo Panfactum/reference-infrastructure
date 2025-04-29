@@ -57,30 +57,6 @@ extra_inputs:
     pf-test-71:
       name: pf-test-71
       email: jack+pf-test-71@panfactum.com
-    james-unique:
-      name: james-unique
-      email: james+unique@panfactum.com
-    james-unique-2:
-      name: james-unique-2
-      email: james+unique+2@panfactum.com
-    james-unique-3:
-      name: james-unique-3
-      email: james+uniuqe+3@panfactum.com
-    james-2:
-      name: james-2
-      email: james+2@panfactum.com
-    james-3:
-      name: james-3
-      email: james-3@panfactum.com
-    james-4:
-      name: james-4
-      email: james+4@panfactum.com
-    james-5:
-      name: james-5
-      email: james+5@panfactum.com
-    james-6:
-      name: james-6
-      email: james+6@panfactum.com
   primary_contact:
     full_name: Jack Langston
     phone_number: +1 317-341-4889

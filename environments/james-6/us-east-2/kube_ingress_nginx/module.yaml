@@ -1,4 +1,0 @@
-extra_inputs:
-  ingress_domains:
-    - prod.james.panfactum.com
-  sla_level: 1

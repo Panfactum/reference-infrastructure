@@ -1,4 +1,0 @@
-extra_inputs:
-  ingress_enabled: true
-  vault_domain: vault.prod.james.panfactum.com
-  wait: true
