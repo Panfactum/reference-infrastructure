@@ -12,7 +12,11 @@ cd repo || exit
 
 # Step 3: Upload to S3
 INSTALLER_PATH="packages/installer/install.sh"
-if [[ $IS_TAG == "1" ]]; then
+
+# If git_ref is main, then overwrite the main installer
+if [[ $GIT_REF == "main" ]]; then
+  VERSION="main"
+elif [[ $IS_TAG == "1" ]]; then
   VERSION=$GIT_REF
 else
   VERSION=$GIT_COMMIT_HASH

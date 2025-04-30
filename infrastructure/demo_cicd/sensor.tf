@@ -438,6 +438,47 @@ module "sensor" {
         }
       }
     },
+        {
+      template = {
+        name = "${module.installer_uploader_workflow.name}-push-main"
+        conditions = "push-to-main"
+        argoWorkflow = {
+          operation = "submit"
+          source = {
+            resource = {
+              apiVersion = "argoproj.io/v1alpha1"
+              kind = "Workflow"
+              metadata = {
+                generateName = module.installer_uploader_workflow.generate_name
+                namespace = local.namespace
+              }
+              spec = {
+                arguments = module.installer_uploader_workflow.arguments
+                workflowTemplateRef = {
+                  name = module.installer_uploader_workflow.name
+                }
+              }
+            }
+          }
+          parameters = [
+            {
+              dest = "spec.arguments.parameters.0.value"
+              src = {
+                dependencyName = "push"
+                value = "main"
+              }
+            },
+            {
+              dest = "spec.arguments.parameters.1.value"
+              src = {
+                dependencyName = "push"
+                value = "0"
+              }
+            }
+          ]
+        }
+      }
+    },
     {
       template = {
         name = module.build_and_deploy_demo_user_service_workflow.name
