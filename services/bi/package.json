@@ -1,0 +1,19 @@
+{
+  "name": "panfactum-bi",
+  "version": "1.0.0",
+  "description": "BI service for Panfactum data analysis",
+  "main": "import_to_duckdb.ts",
+  "type": "module",
+  "scripts": {
+    "import": "bun run import_to_duckdb.ts",
+    "explore": "bun run explore_data.ts",
+    "refresh": "./refresh_duckdb.sh",
+    "setup": "./setup.sh"
+  },
+  "dependencies": {
+    "duckdb": "^0.10.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
