@@ -1,18 +1,59 @@
-# Meta
-environment: "production" # Name of the environment
-
-# Panfactum Stack
-pf_stack_version: "main"
-
-# AWS
-aws_account_id: "891377197483" # ID of the aws account to use for the aws provider
-aws_profile: "production-superuser" # Name of the AWS CLI profile to use for the aws provider
-aws_secondary_account_id: "891377197483" #ID of the aws account to use for the aws_secondary provider
-aws_secondary_profile: "production-superuser" # Name of the AWS CLI profile to use for the aws_secondary provider
-
-# State Bucket
-tf_state_account_id: "891377197483" # AWS Account for the S3 bucket holding the state file
-tf_state_region: "us-east-2" # Region for the S3 bucket holding the state file
-tf_state_bucket: "pf-tf-state-production" # S3 bucket holding the state file
-tf_state_lock_table: "pf-tf-locks-production" # Dynamodb table holding state locks"
-tf_state_profile: "production-superuser" # AWS profile to assume for working with the state files
+domains:
+  jack-8.panfactum.com:
+    zone_id: Z0318624P6TJ9FWAVHZW
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  getpanfactum.com:
+    zone_id: Z03246823HHIAC4AIYJGH
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
+  panfactum.com:
+    zone_id: Z0093484A5K6EFKTZCHA
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
+  panfactum.org:
+    zone_id: Z037155113K6H05RL3UR9
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
+  trypanfactum.com:
+    zone_id: Z10413681QCYMX4DRRJ41
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
+  jack-2.panfactum.com:
+    zone_id: Z09336491CP3NVW08UKQ1
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  jack-3.panfactum.com:
+    zone_id: Z03251412SJOQP75I2J3D
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  jack-4.panfactum.com:
+    zone_id: Z03270643OSQ1QUPMDZOS
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  jack-5.panfactum.com:
+    zone_id: Z092131632V0VJJKNA3A
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  jack-7.panfactum.com:
+    zone_id: Z0211263O3T5USKT391G
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  panfactum.ai:
+    zone_id: Z0682551242UUKR8WFRFJ
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  pftest12345.panfactum.com:
+    zone_id: Z05577323BEJA947YNAUX
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  pftest123456.panfactum.com:
+    zone_id: Z05632283IF8846J7V7UE
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  test123.panfactum.com:
+    zone_id: Z070016535P4NDWHV83CL
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  test1234.panfactum.com:
+    zone_id: Z0200519P3XG3Y0NJRWX
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+extra_tags: {}
+environment: production
+extra_inputs: {}
+pf_stack_version: main
+tf_state_account_id: "891377197483"
+tf_state_profile: production-superuser
+tf_state_region: us-east-2
+tf_state_bucket: pf-tf-state-production
+tf_state_lock_table: pf-tf-locks-production
+aws_account_id: "891377197483"
+aws_profile: production-superuser
+aws_secondary_account_id: "891377197483"
+aws_secondary_profile: production-superuser

@@ -1,0 +1,12 @@
+domains:
+  dev.panfactum.ai:
+    zone_id: Z04244333U5CEJDKTECAX
+    record_manager_role_arn: arn:aws:iam::471112902605:role/route53-record-manager-20250424185745101500000004
+  jack.panfactum.com:
+    zone_id: Z0358903BDJ4Y94QOGA5
+    record_manager_role_arn: arn:aws:iam::471112902605:role/route53-record-manager-20250424185745101500000004
+  jack2.panfactum.com:
+    zone_id: Z103159137RGGFPH1HDLE
+    record_manager_role_arn: arn:aws:iam::471112902605:role/route53-record-manager-20250424185745101500000004
+extra_tags: {}
+extra_inputs: {}

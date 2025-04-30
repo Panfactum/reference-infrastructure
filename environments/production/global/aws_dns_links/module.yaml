@@ -1,58 +1,11 @@
 extra_inputs:
   links:
     panfactum.com:
-      - subdomain: test123
+      - subdomain: jack-8
         name_servers:
-          - ns-77.awsdns-09.com
-          - ns-610.awsdns-12.net
-          - ns-1892.awsdns-44.co.uk
-          - ns-1250.awsdns-28.org
-      - subdomain: test1234
-        name_servers:
-          - ns-1163.awsdns-17.org
-          - ns-39.awsdns-04.com
-          - ns-645.awsdns-16.net
-          - ns-1802.awsdns-33.co.uk
-      - subdomain: pftest12345
-        name_servers:
-          - ns-314.awsdns-39.com
-          - ns-1041.awsdns-02.org
-          - ns-874.awsdns-45.net
-          - ns-1674.awsdns-17.co.uk
-      - subdomain: pftest123456
-        name_servers:
-          - ns-489.awsdns-61.com
-          - ns-1415.awsdns-48.org
-          - ns-1979.awsdns-55.co.uk
-          - ns-628.awsdns-14.net
-      - subdomain: jack
-        name_servers:
-          - ns-856.awsdns-43.net
-          - ns-1197.awsdns-21.org
-          - ns-105.awsdns-13.com
-          - ns-1603.awsdns-08.co.uk
-      - subdomain: jack2
-        name_servers:
-          - ns-1170.awsdns-18.org
-          - ns-369.awsdns-46.com
-          - ns-696.awsdns-23.net
-          - ns-1680.awsdns-18.co.uk
-      - subdomain: james
-        name_servers:
-          - ns-392.awsdns-49.com
-          - ns-1292.awsdns-33.org
-          - ns-1989.awsdns-56.co.uk
-          - ns-858.awsdns-43.net
-    panfactum.ai:
-      - subdomain: dev
-        name_servers:
-          - ns-1354.awsdns-41.org
-          - ns-886.awsdns-46.net
-          - ns-1867.awsdns-41.co.uk
-          - ns-180.awsdns-22.com
-      - subdomain: test
-        name_servers:
-          - ns-345.awsdns-43.com
-          - ns-1987.awsdns-56.co.uk
-          - ns-954.awsdns-55.net
-          - ns-1241.awsdns-27.org
+          - ns-537.awsdns-03.net
+          - ns-1564.awsdns-03.co.uk
+          - ns-83.awsdns-10.com
+          - ns-1499.awsdns-59.org
+        ds_record: 30903 13 2
+          EA3CB2F620B79E715DC6812C88B363187ED8A6D1FC477FCB4D60FD720C0241EF

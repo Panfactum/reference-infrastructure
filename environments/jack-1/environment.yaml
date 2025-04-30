@@ -1,0 +1,13 @@
+domains:
+  jack-1.panfactum.com:
+    zone_id: Z01880101GPAHHPPMAP3A
+    record_manager_role_arn: arn:aws:iam::955425229159:role/route53-record-manager-20250427162437398500000004
+extra_tags: {}
+environment: jack-1
+extra_inputs: {}
+pf_stack_version: main
+tf_state_region: ca-central-1
+tf_state_bucket: tf-jack-1-bovu05ec
+tf_state_lock_table: tf-jack-1-bovu05ec
+aws_account_id: "955425229159"
+aws_profile: jack-1-superuser

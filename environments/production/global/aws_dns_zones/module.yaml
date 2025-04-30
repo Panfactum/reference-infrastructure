@@ -10,3 +10,15 @@ extra_inputs:
       dnssec_enabled: true
     panfactum.ai:
       dnssec_enabled: false
+    jack-2.panfactum.com:
+      dnssec_enabled: true
+    jack-3.panfactum.com:
+      dnssec_enabled: true
+    jack-4.panfactum.com:
+      dnssec_enabled: true
+    jack-5.panfactum.com:
+      dnssec_enabled: true
+    jack-7.panfactum.com:
+      dnssec_enabled: true
+    jack-8.panfactum.com:
+      dnssec_enabled: true

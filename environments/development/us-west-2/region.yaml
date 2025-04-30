@@ -6,7 +6,7 @@ extra_inputs:
   vpa_enabled: true
   panfactum_scheduler_enabled: true
 aws_region: us-west-2
-aws_secondary_region: us-west-1
+aws_secondary_region: us-east-1
 kube_api_server: https://9698FFDDC95ABA7D04AF68E476F1E80B.gr7.us-west-2.eks.amazonaws.com
 kube_config_context: development-us-west-2
 vault_addr: https://vault.us-west-2.development.panfactum.com

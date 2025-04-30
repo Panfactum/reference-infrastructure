@@ -1,0 +1,3 @@
+extra_inputs:
+  name: sops-jack-1
+module: aws_kms_encrypt_key
