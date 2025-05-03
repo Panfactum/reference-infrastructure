@@ -13,30 +13,30 @@ const db = new duckdb.Database(DB_PATH);
 const conn = db.connect();
 
 /**
+ * Drop a table if it exists
+ */
+async function dropTableIfExists(tableName: string): Promise<void> {
+  try {
+    console.log(`Dropping table if it exists: ${tableName}`);
+    conn.exec(`DROP TABLE IF EXISTS ${tableName}`);
+  } catch (error) {
+    console.error(`Error dropping table ${tableName}: ${error}`);
+  }
+}
+
+/**
  * Process a JSONL file and import it into DuckDB
  */
 async function processFile(filePath: string, tableName: string): Promise<void> {
   console.log(`Processing file: ${filePath} into table: ${tableName}`);
-  
-  try {
-    // Check if table exists and create it if not
-    const tableExists = await new Promise<boolean>((resolve) => {
-      conn.all(`SELECT name FROM sqlite_master WHERE type='table' AND name='${tableName}'`, (err, rows) => {
-        if (err) {
-          console.error(`Error checking if table exists: ${err.message}`);
-          resolve(false);
-        } else {
-          resolve(rows.length > 0);
-        }
-      });
-    });
 
-    if (!tableExists) {
-      console.log(`Creating table: ${tableName}`);
-      conn.exec(`CREATE TABLE ${tableName} AS SELECT * FROM read_json_auto('${filePath}', format='newline_delimited') LIMIT 0`);
-    }
-    
-    // Import data from the file
+  try {
+    // Drop the table if it exists
+    await dropTableIfExists(tableName);
+
+    // Create the table and import data
+    console.log(`Creating table: ${tableName}`);
+    conn.exec(`CREATE TABLE ${tableName} AS SELECT * FROM read_json_auto('${filePath}', format='newline_delimited') LIMIT 0`);
     conn.exec(`INSERT INTO ${tableName} SELECT * FROM read_json_auto('${filePath}', format='newline_delimited')`);
     console.log(`Successfully imported data from ${filePath} into ${tableName}`);
   } catch (error) {
@@ -72,69 +72,73 @@ async function traverseDirectory(dir: string): Promise<void> {
 async function createViews(): Promise<void> {
   console.log("Creating views for common queries...");
   
-  // View for tasks with project info
-  conn.exec(`
-    CREATE OR REPLACE VIEW task_projects AS
-    SELECT 
-      t.gid as task_gid,
-      t.name as task_name,
-      t.completed,
-      t.created_at,
-      t.modified_at,
-      p.gid as project_gid,
-      p.name as project_name
-    FROM asana_tasks t
-    CROSS JOIN json_each(t.projects) as proj_json
-    JOIN asana_projects p ON json_extract(proj_json.value, '$.gid') = p.gid
-  `);
-  
-  // View for users with their workspaces
-  conn.exec(`
-    CREATE OR REPLACE VIEW user_workspaces AS
-    SELECT 
-      u.gid as user_gid,
-      u.name as user_name,
-      u.email,
-      w.gid as workspace_gid,
-      w.name as workspace_name
-    FROM asana_users u
-    CROSS JOIN json_each(u.workspaces) as ws_json
-    JOIN asana_workspaces w ON json_extract(ws_json.value, '$.gid') = w.gid
-  `);
-  
-  // View for portfolio memberships with user and portfolio info
-  conn.exec(`
-    CREATE OR REPLACE VIEW portfolio_users AS
-    SELECT 
-      pm.gid as membership_gid,
-      json_extract(pm.portfolio, '$.gid') as portfolio_gid,
-      p.name as portfolio_name,
-      json_extract(pm.user, '$.gid') as user_gid,
-      u.name as user_name,
-      u.email as user_email
-    FROM asana_portfolios_memberships pm
-    JOIN asana_portfolios p ON json_extract(pm.portfolio, '$.gid') = p.gid
-    JOIN asana_users u ON json_extract(pm.user, '$.gid') = u.gid
-  `);
-  
-  // View for portfolio items (inferred relationship between portfolios and projects)
-  // Note: This is a best-effort approach as the direct relationship is not in the data
-  conn.exec(`
-    CREATE OR REPLACE VIEW portfolio_projects AS
-    SELECT DISTINCT
-      p.gid as portfolio_gid,
-      p.name as portfolio_name,
-      pr.gid as project_gid,
-      pr.name as project_name,
-      pr.created_at as project_created_at,
-      json_extract(pr.workspace, '$.gid') as workspace_gid
-    FROM asana_portfolios p
-    JOIN asana_projects pr ON json_extract(p.workspace, '$.gid') = json_extract(pr.workspace, '$.gid')
-    -- This join assumes projects in the same workspace might be in the portfolio
-    -- This is not accurate but provides a starting point
-  `);
-  
-  console.log("Views created successfully");
+  try {
+    // View for tasks with project info - using DuckDB's JSON functions
+    console.log("Creating task_projects view...");
+    conn.exec(`
+      CREATE OR REPLACE VIEW task_projects AS
+      SELECT 
+        t.gid AS task_gid,
+        t.name AS task_name,
+        t.completed,
+        t.created_at,
+        t.modified_at,
+        p.gid AS project_gid,
+        p.name AS project_name
+      FROM 
+        asana_tasks t,
+        UNNEST(t.projects) AS proj(value)
+      JOIN 
+        asana_projects p 
+      ON 
+        p.gid = REPLACE(json_extract(proj.value, '$.gid')::VARCHAR, '"', '')
+    `);
+    console.log("task_projects view created successfully");
+    
+    // View for users with their workspaces
+    console.log("Creating user_workspaces view...");
+    conn.exec(`
+      CREATE OR REPLACE VIEW user_workspaces AS
+      SELECT 
+        u.gid as user_gid,
+        u.name as user_name,
+        u.email,
+        w.gid as workspace_gid,
+        w.name as workspace_name
+      FROM 
+        asana_users u,
+        UNNEST(u.workspaces) AS ws(value)
+      JOIN 
+        asana_workspaces w 
+      ON 
+        w.gid = REPLACE(json_extract(ws.value, '$.gid')::VARCHAR, '"', '')
+    `);
+    console.log("user_workspaces view created successfully");
+    
+    // View for portfolio memberships with user and portfolio info
+    console.log("Creating portfolio_users view...");
+    conn.exec(`
+      CREATE OR REPLACE VIEW portfolio_users AS
+      SELECT 
+        pm.gid as membership_gid,
+        REPLACE(json_extract(pm.portfolio, '$.gid')::VARCHAR, '"', '') as portfolio_gid,
+        p.name as portfolio_name,
+        REPLACE(json_extract(pm.user, '$.gid')::VARCHAR, '"', '') as user_gid,
+        u.name as user_name,
+        u.email as user_email
+      FROM asana_portfolios_memberships pm
+      JOIN asana_portfolios p ON REPLACE(json_extract(pm.portfolio, '$.gid')::VARCHAR, '"', '') = p.gid
+      JOIN asana_users u ON REPLACE(json_extract(pm.user, '$.gid')::VARCHAR, '"', '') = u.gid
+    `);
+    console.log("portfolio_users view created successfully");
+    
+    // We've removed the portfolio_projects view as requested
+    
+    console.log("Views created successfully");
+  } catch (error) {
+    console.error(`Error creating views: ${error}`);
+    console.log("Some views may not have been created due to errors.");
+  }
 }
 
 /**

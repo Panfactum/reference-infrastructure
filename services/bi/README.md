@@ -23,6 +23,16 @@ The system traverses all JSONL files in the data directory and imports them into
 
 ### Import Data
 
+Sync data from s3
+
+```bash
+aws s3 sync s3://airbyte-dest-589950d8851030f4 ./data/
+```
+
+Then, run the import script to create the DuckDB database and import all data:
+```
+
+
 To import all data into DuckDB:
 
 ```bash
@@ -49,20 +59,6 @@ This can be scheduled via cron to run periodically, e.g.:
 # Run daily at 2 AM
 0 2 * * * /home/uptown/Projects/panfactum/reference-infrastructure/services/bi/refresh_duckdb.sh
 ```
-
-### Explore Data
-
-To explore the imported data:
-
-```bash
-./explore_data.ts
-```
-
-This will:
-1. List all tables in the database
-2. Show record counts for each table
-3. Display sample data from key tables
-4. Run some example analysis queries
 
 ## Data Schema
 

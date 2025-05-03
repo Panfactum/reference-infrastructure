@@ -24,9 +24,17 @@ if [ -f "$DB_PATH" ]; then
   cp "$DB_PATH" "${DB_PATH}.bak"
 fi
 
-# Run the import script
+# Run the import script with detailed error logging
 log "Running import script"
-bun run "$IMPORT_SCRIPT" 2>&1 | tee -a "$LOG_FILE"
+BUN_DEBUG_LOG=1 bun run "$IMPORT_SCRIPT" 2>&1 | tee -a "$LOG_FILE"
+
+# Check exit status
+IMPORT_STATUS=${PIPESTATUS[0]}
+if [ $IMPORT_STATUS -ne 0 ]; then
+  log "WARNING: Import script exited with status $IMPORT_STATUS. Check the log for details."
+else
+  log "Import script completed successfully"
+fi
 
 # Verify that the database was created successfully
 if [ -f "$DB_PATH" ]; then

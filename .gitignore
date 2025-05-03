@@ -6,3 +6,4 @@
 .terraformrc
 .terraformrc.dev
 .nats
+.idea
