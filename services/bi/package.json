@@ -11,7 +11,7 @@
     "setup": "./setup.sh"
   },
   "dependencies": {
-    "duckdb": "^0.10.0"
+    "duckdb": "^1.2.1"
   },
   "devDependencies": {
     "bun-types": "latest"

@@ -24,3 +24,7 @@
 
 #include "src/optimizer/pushdown/pushdown_single_join.cpp"
 
+#include "src/optimizer/pushdown/pushdown_window.cpp"
+
+#include "src/optimizer/pushdown/pushdown_unnest.cpp"
+

@@ -71,73 +71,48 @@ async function traverseDirectory(dir: string): Promise<void> {
  */
 async function createViews(): Promise<void> {
   console.log("Creating views for common queries...");
-  
+
   try {
-    // View for tasks with project info - using DuckDB's JSON functions
-    console.log("Creating task_projects view...");
+    const derivedTableName = "task_projects_materialized"; // Use a distinct name
+
+    // **Crucial:** Drop the table first if running the script repeatedly
+    await dropTableIfExists(derivedTableName);
+
+    console.log(`Creating table: ${derivedTableName}...`);
+    // Use CREATE TABLE AS SELECT...
     conn.exec(`
-      CREATE OR REPLACE VIEW task_projects AS
-      SELECT 
-        t.gid AS task_gid,
-        t.name AS task_name,
-        t.completed,
-        t.created_at,
-        t.modified_at,
-        p.gid AS project_gid,
-        p.name AS project_name
-      FROM 
-        asana_tasks t,
-        UNNEST(t.projects) AS proj(value)
-      JOIN 
-        asana_projects p 
-      ON 
-        p.gid = REPLACE(json_extract(proj.value, '$.gid')::VARCHAR, '"', '')
+      CREATE TABLE ${derivedTableName} AS
+      SELECT
+          p.gid AS project_gid,
+          p.name AS project_name,
+          t.gid AS task_gid,
+          t.name AS task_name,
+          t.actual_time_minutes,
+          t.completed,
+          t.created_at,
+          t.modified_at,
+          MAX(CASE WHEN cf.unnest.name = 'Workload' AND cf.unnest.enum_value IS NOT NULL THEN cf.unnest.enum_value.name END) AS workload,
+          MAX(CASE WHEN cf.unnest.name = 'Workload Type' AND cf.unnest.enum_value IS NOT NULL THEN cf.unnest.enum_value.name END) AS workload_type,
+          MAX(CASE WHEN cf.unnest.name = 'Environment' AND cf.unnest.enum_value IS NOT NULL THEN cf.unnest.enum_value.name END) AS environment,
+          MAX(CASE WHEN cf.unnest.name = 'SLA' AND cf.unnest.enum_value IS NOT NULL THEN cf.unnest.enum_value.name END) AS sla
+      FROM
+          asana_tasks t,
+          UNNEST(t.projects) AS proj(value),
+          UNNEST(t.custom_fields) AS cf,
+          asana_projects p
+      WHERE
+          p.gid = proj.value.gid
+      GROUP BY
+          1, 2, 3, 4, 5, 6, 7, 8
     `);
-    console.log("task_projects view created successfully");
-    
-    // View for users with their workspaces
-    console.log("Creating user_workspaces view...");
-    conn.exec(`
-      CREATE OR REPLACE VIEW user_workspaces AS
-      SELECT 
-        u.gid as user_gid,
-        u.name as user_name,
-        u.email,
-        w.gid as workspace_gid,
-        w.name as workspace_name
-      FROM 
-        asana_users u,
-        UNNEST(u.workspaces) AS ws(value)
-      JOIN 
-        asana_workspaces w 
-      ON 
-        w.gid = REPLACE(json_extract(ws.value, '$.gid')::VARCHAR, '"', '')
-    `);
-    console.log("user_workspaces view created successfully");
-    
-    // View for portfolio memberships with user and portfolio info
-    console.log("Creating portfolio_users view...");
-    conn.exec(`
-      CREATE OR REPLACE VIEW portfolio_users AS
-      SELECT 
-        pm.gid as membership_gid,
-        REPLACE(json_extract(pm.portfolio, '$.gid')::VARCHAR, '"', '') as portfolio_gid,
-        p.name as portfolio_name,
-        REPLACE(json_extract(pm.user, '$.gid')::VARCHAR, '"', '') as user_gid,
-        u.name as user_name,
-        u.email as user_email
-      FROM asana_portfolios_memberships pm
-      JOIN asana_portfolios p ON REPLACE(json_extract(pm.portfolio, '$.gid')::VARCHAR, '"', '') = p.gid
-      JOIN asana_users u ON REPLACE(json_extract(pm.user, '$.gid')::VARCHAR, '"', '') = u.gid
-    `);
-    console.log("portfolio_users view created successfully");
-    
-    // We've removed the portfolio_projects view as requested
-    
-    console.log("Views created successfully");
+    console.log(`${derivedTableName} table created successfully`);
+
+    // You could add other CREATE TABLE AS statements here if needed
+
   } catch (error) {
-    console.error(`Error creating views: ${error}`);
-    console.log("Some views may not have been created due to errors.");
+    // Note: If the underlying SELECT fails for other reasons (syntax, missing table),
+    // the error will still be caught here.
+    console.error(`Error creating derived tables: ${error}`);
   }
 }
 
