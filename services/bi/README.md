@@ -9,7 +9,7 @@ The system traverses all JSONL files in the data directory and imports them into
 ## Requirements
 
 - Bun (JavaScript runtime)
-- DuckDB (embedded analytics database)
+- DuckDB (embedded analytics database) - Setup with the local installer script, not through Nix
 
 ## Directory Structure
 
@@ -18,8 +18,48 @@ The system traverses all JSONL files in the data directory and imports them into
 - `refresh_duckdb.sh` - Shell script to refresh the database (can be scheduled via cron)
 - `explore_data.ts` - Script to explore and analyze the imported data
 - `bi.duckdb` - The DuckDB database file (created by the import script)
+- `setup_duckdb.sh` - Script to install DuckDB locally (outside of Nix)
+- `duckdb_web_viewer.ts` - Bun script that provides a web UI for DuckDB
+- `duckdb_ui.ts` - Helper script for working with DuckDB UI
 
 ## Usage
+
+### Setup DuckDB Locally
+
+Since DuckDB has been removed from the Nix flake, you need to set it up locally. This is done to avoid issues with Nix's immutable filesystem that prevents DuckDB from installing extensions properly.
+
+```bash
+# Make the setup script executable
+chmod +x setup_duckdb.sh
+
+# Run the setup script
+./setup_duckdb.sh
+```
+
+This will:
+1. Download and install DuckDB 1.2.2 in a local directory (.local/bin)
+2. Create a DuckDB configuration file with extension settings
+3. Create a duckdb-ui wrapper script for easily starting DuckDB with UI
+
+### Using DuckDB UI
+
+After running the setup script, you can use DuckDB with UI in several ways:
+
+1. Using the duckdb-ui wrapper:
+```bash
+duckdb-ui bi.duckdb
+```
+
+2. Using the web viewer (recommended for better compatibility):
+```bash
+./duckdb_web_viewer.ts
+```
+Then open http://localhost:3000 in your browser.
+
+3. Using the helper script with multiple fallback options:
+```bash
+./duckdb_ui.ts
+```
 
 ### Import Data
 

@@ -1,5 +1,5 @@
 WITH source AS (
-    SELECT * FROM {{ source('jsonl_files', 'stripe_payment_methods') }}
+    SELECT * FROM {{ source('stripe', 'payment_methods') }}
 )
 
 SELECT

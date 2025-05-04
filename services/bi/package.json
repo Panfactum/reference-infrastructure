@@ -8,7 +8,10 @@
     "import": "bun run import_to_duckdb.ts",
     "explore": "bun run explore_data.ts",
     "refresh": "./refresh_duckdb.sh",
-    "setup": "./setup.sh"
+    "setup": "./setup.sh",
+    "setup-duckdb": "./setup_duckdb.sh",
+    "duckdb-ui": "./duckdb_ui.ts",
+    "duckdb-web": "./duckdb_web_viewer.ts"
   },
   "dependencies": {
     "duckdb": "^1.2.1"
