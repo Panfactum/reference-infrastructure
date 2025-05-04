@@ -8,3 +8,7 @@ models:
       extensions:
         - httpfs
         - parquet
+      plugins:
+        - module: gsheet
+          config:
+            method: oauth

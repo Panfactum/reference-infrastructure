@@ -38,3 +38,11 @@ sources:
       - name: subscriptions
       - name: usage_records
 
+  - name: gsheet
+    schema: "gsheet"
+    tables:
+      - name: gross_margin
+        meta:
+          plugin: gsheet # Explicitly declare the plugin
+          url: "https://docs.google.com/spreadsheets/d/1KsC-tBeyBi2oYS0xLmARGA-g1INDlhU4ZW1dZmjLOcw/edit#gid=0"
+          worksheet: 6
