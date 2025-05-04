@@ -1,0 +1,224 @@
+week_start,project_gid,project_name,task_name,actual_time_minutes
+2025-03-24,1209560058794355,Bambee - Client Support,keda timeline,20
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Notification of ProductionUpgrade Completion,
+2025-03-10,1209589167360782,Bambee - Client Onboarding,Destroy Old Cluster,
+2025-03-10,1209550293985387,Implentio - Onboarding,Implement the optimized backup solution with Snappy compression,60
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Notification of ProductionUpgrade Completion,
+2025-03-03,1209550293985387,Implentio - Onboarding,Q: Upgrade metabase first or after? ,5
+2025-04-14,1209560058794355,Bambee - Client Support,bambee AWS Config Cost,27
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Upgrade Kick Off Meeting,
+2025-03-03,1209550293985387,Implentio - Onboarding,Upgrade implentio_workflow to hash at the module level,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,"bambee message, freeze during the cut-over and dual bumps after",
+2025-03-24,1209560058794355,Bambee - Client Support,Cost review,
+2025-03-17,1209560058794355,Bambee - Client Support,Task Service Build not automatically building and deploying,119
+2025-03-10,1209560058794355,Bambee - Client Support,Netlify Contract Renewal,
+2025-03-24,1209560058794355,Bambee - Client Support,rds extended support,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Sync version in target production cluster,483
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Stage Testing Successful Confirmation,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Stage Upgrade Complete,
+2025-03-24,1209560058794355,Bambee - Client Support,Netlify Contract Renewal Notification and Timeline,15
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Notification of ProductionUpgrade Completion,
+2025-04-07,1209560058794355,Bambee - Client Support,nate dev shell not building,62
+2025-03-17,1209560058794355,Bambee - Client Support,unable to deploy,65
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Utilize Compute Savings Plan Credits,121
+2025-03-03,1209550293985387,Implentio - Onboarding,Production Environment Upgrade to edge.25-02-28,
+2025-04-07,1209560058794355,Bambee - Client Support,retry webhook deploy trigger,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Confirmation of successful upgrade and monitoring,
+2025-04-28,1210131895437231,Haven - Client Support,Fix the sequential deployment issue to allow API and web to deploy in parallel,
+2025-04-07,1209560058794355,Bambee - Client Support,restart sensors on cron like nats,
+2025-03-24,1209550294079397,Implentio - Support,dlq eventbus,47
+2025-04-07,1209560058794355,Bambee - Client Support,apollo gql change not showing up,7
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Monitor Production,
+2025-04-21,1209906286845556,Haven - Client Onboarding,Deploying Web to Stage,130
+2025-03-17,1209560058794355,Bambee - Client Support,Trial Conversion Error,13
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Upgrade Notification,
+2025-03-10,1209582562638781,Selflessly Client Upgrade,Upgrade RDS Stage,47
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Upgrade Kick Off Meeting,
+2025-03-17,1209560058794355,Bambee - Client Support,Roll Back Bambee,240
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Upgrade Kick Off Meeting,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Increase to 2%,5
+2025-03-10,1209589167360782,Bambee - Client Onboarding,CICD For Production,56
+2025-03-03,1209550294079397,Implentio - Support,Airbyte Module - Scoping,30
+2025-03-03,1209550294079397,Implentio - Support,AWS Backup TagResource Permission,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Upgrade Kick Off Meeting,
+2025-04-21,1209906286845556,Haven - Client Onboarding,DNS Cutover,30
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Draft Upgrade Plan for Kick Off,
+2025-03-10,1209550293985387,Implentio - Onboarding,implentio production upgrade,1399
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Notification of ProductionUpgrade Completion,
+2025-04-21,1209906286845556,Haven - Client Onboarding,Migrate S3 State in Production,22
+2025-03-24,1209560058794355,Bambee - Client Support,nix issue,
+2025-03-24,1209560058794355,Bambee - Client Support,remove api-pf from pro,
+2025-04-14,1209560058794355,Bambee - Client Support,core service build failing,194
+2025-04-07,1209906286845556,Haven - Client Onboarding,Bootstrap Clusters,1418
+2025-03-03,1209582562638781,Selflessly Client Upgrade,Destroy Dev Environment,45
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Confirmation to proceed upgrading Production,
+2025-03-10,1209560058794355,Bambee - Client Support,bambee cicd fail,23
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Confirmation of successful upgrade and monitoring,
+2025-04-07,1209906286845556,Haven - Client Onboarding,Setup Authentik / SSO,
+2025-04-28,1209906286845556,Haven - Client Onboarding,Haven production launch assistance,13
+2025-03-03,1209560058794355,Bambee - Client Support,Confirm okta cancellation,
+2025-03-17,1209550294079397,Implentio - Support,Coordinate with Implantio regarding Airbase install timeline,5
+2025-03-03,1209560058794355,Bambee - Client Support,Netlify Deploy Preview through CLI/API,90
+2025-03-03,1209560058794355,Bambee - Client Support,Bambee Timeline for Netlify Enterprise Downgrade,30
+2025-04-28,1209550294079397,Implentio - Support,Airbyte pod cannot be scheduled - maybe due to resource constraints,13
+2025-04-07,1209560058794355,Bambee - Client Support,cicd training service deployment,13
+2025-04-28,1210131895437231,Haven - Client Support,Increase Redis Credential Rotation Lifecycle,5
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Draft Upgrade Plan for Kick Off,
+2025-03-17,1209560058794355,Bambee - Client Support,logs not coming through,222
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Confirmation of successful upgrade and monitoring,
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Stage Testing Successful Confirmation,
+2025-04-07,1209906286845556,Haven - Client Onboarding,Initialize IAC,181
+2025-03-03,1209550293985387,Implentio - Onboarding,Implentio Status Update,
+2025-03-10,1209589167360782,Bambee - Client Onboarding,debugging malloc error,94
+2025-03-24,1209560058794355,Bambee - Client Support,how to sops,5
+2025-04-21,1209906286845556,Haven - Client Onboarding,Data Migration Jobs,
+2025-04-14,1209906286845556,Haven - Client Onboarding,Opensearch Alpha Deployment to Stage,176
+2025-03-10,1209589167360782,Bambee - Client Onboarding,Staging Turn Off Metrics / APM ,84
+2025-04-07,1209906286845556,Haven - Client Onboarding,Opensearch Module,
+2025-04-21,1209906286845556,Haven - Client Onboarding,Upgrade Production,81
+2025-03-10,1209550294079397,Implentio - Support,Continuous Delivery & Local Backup,1
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Upgrade Schedule Confirmation,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Confirmation to proceed upgrading Production,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Monitor Production,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Notification of ENV Upgrade Completion,
+2025-02-24,1209550293985387,Implentio - Onboarding,Cut New Edge Release,15
+2025-04-07,1209560058794339,Hudson - Client Support,hudson cdn issue,104
+2025-04-21,1209906286845556,Haven - Client Onboarding,APEX DNS Migration,
+2025-04-21,1209550294079397,Implentio - Support,Dev Argo Upgrade,30
+2025-04-07,1209913161177535,Selflessly - Support,Jeff Authentik Login Issue,33
+2025-03-17,1209550294079397,Implentio - Support,Enable Disruption Production PG Window,25
+2025-03-10,1209589167360782,Bambee - Client Onboarding,Finalize Cut-Over,71
+2025-03-17,1209560058794339,Hudson - Client Support,Redis durability,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Notification of ENV Upgrade Completion,
+2025-04-28,1209560058794339,Hudson - Client Support,Hudson Argo Metrics & Stable Upgrade,33
+2025-02-24,1209550293985387,Implentio - Onboarding,Re-enable autodeployment,5
+2025-04-28,1209550294079397,Implentio - Support,Authentik Application Permissions,14
+2025-03-03,1209550294079397,Implentio - Support,Airbyte Module - Deployment,60
+2025-04-07,1209560058794355,Bambee - Client Support,cicd deployment error and infra access,14
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Notification of ENV Upgrade Completion,
+2025-02-24,1209550293985387,Implentio - Onboarding,Development Environment Upgrade to edge.25-02-28,2880
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Notification of ENV Upgrade Completion,
+2025-04-14,1209913161177535,Selflessly - Support,Selflessly CICD Upgrade,25
+2025-04-14,1209906286845556,Haven - Client Onboarding,Staging Deployed and Testing Started,
+2025-03-03,1209550293985387,Implentio - Onboarding,Staging Testing Plan and Production Upgrade Plan,30
+2025-03-17,1209550294079397,Implentio - Support,Events Dropped,192
+2025-03-10,1209582562638781,Selflessly Client Upgrade,Respond to RDS Mysql Upgrade Question,
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Confirmation of successful upgrade and monitoring,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Production Cut-over,60
+2025-03-10,1209589167360782,Bambee - Client Onboarding,Monitor Reviews,51
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Stage Testing Successful Confirmation,
+2025-03-03,1209582562638781,Selflessly Client Upgrade,Upgrade stage,660
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Draft Upgrade Plan for Kick Off,
+2025-03-17,1209550294079397,Implentio - Support,Argo Perms for Admins to create workflows,84
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Confirmation to proceed upgrading Production,
+2025-03-03,1209550293985387,Implentio - Onboarding,Support being able to pass in transform,90
+2025-04-21,1209550294079397,Implentio - Support,Implentio Argo Service ConfigMap Access,83
+2025-04-28,1209560058794339,Hudson - Client Support,prebuilt module to deploy aws_s3_public_website,9
+2025-03-24,1209550294079397,Implentio - Support,deploy airbyte with updates to dev cluster,30
+2025-03-17,1209550294079397,Implentio - Support,k8s access denied for admin reserved user,7
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Stage Testing Successful Confirmation,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Upgrade Notification,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Monitor Production,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Upgrade Schedule Confirmation,
+2025-04-07,1209906286845556,Haven - Client Onboarding,Confirm Haven's database setup and exact requirements.,
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Notification of ENV Upgrade Completion,
+2025-03-24,1209560058794355,Bambee - Client Support,Bambee CICD Performance Improvement,
+2025-04-07,1209560058794355,Bambee - Client Support,Upgrade RDS Postgress,189
+2025-04-21,1209906286845556,Haven - Client Onboarding,CICD Pipeline for Stage and Prod Branch,382
+2025-03-17,1209550294079397,Implentio - Support,reason ionShutdownHook for argo workflows,30
+2025-03-24,1209560058794339,Hudson - Client Support,hudson apply secure email update,5
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Confirmation to proceed upgrading Production,
+2025-04-14,1209550294079397,Implentio - Support,Airbyte Production,20
+2025-03-03,1209560058794355,Bambee - Client Support,Github Runner Ubuntu 20.04 LTS EOL,32
+2025-04-07,1209906286845556,Haven - Client Onboarding,Haven Kick Off Meeting,60
+2025-04-28,1210131895437231,Haven - Client Support,increase redis credential rotation period,1
+2025-04-14,1209906286845556,Haven - Client Onboarding,Haven cron,90
+2025-04-14,1209560058794355,Bambee - Client Support,bambee prod node thrash,43
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Stage Upgrade Complete,
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Upgrade Schedule Confirmation,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Notification of ProductionUpgrade Completion,
+2025-04-14,1209560058794355,Bambee - Client Support,Netlify CLI Container,390
+2025-04-28,1209560058794339,Hudson - Client Support,Pod Deletion in Argo with Missing DataDog Logs - Potential Memory Eviction Issue,19
+2025-03-24,1209560058794355,Bambee - Client Support,incorrect s3 policy,78
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Production Upgrade Complete,
+2025-04-28,1210131895437231,Haven - Client Support,Adjust postgres reliability,
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Upgrade Environments,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Upgrade Environments,
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Upgrade Environments,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Upgrade Notification,
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Draft Upgrade Plan for Kick Off,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Destroy dev cluster after Bambi's cutover,60
+2025-04-07,1209906286845556,Haven - Client Onboarding,Create Dev AWS Account,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Confirmation of successful upgrade and monitoring,
+2025-04-14,1209550294079397,Implentio - Support,Airbyte Cleanup,678
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Monitor Production,
+2025-03-03,1209560058794339,Hudson - Client Support,Update let's encrypt email notification address to Panfactum,8
+2025-04-28,1210137658881174,Implentio Stable Upgrade,Monitor Production,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Upgrade Notification,
+2025-03-17,1209550294079397,Implentio - Support,Buildkit pipelines for failing before suceeding,60
+2025-03-24,1209550294079397,Implentio - Support,wes implentio pf-db-tunnel error,5
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Upgrade Schedule Confirmation,
+2025-04-21,1209550294079397,Implentio - Support,Database no user errr,180
+2025-04-07,1209906286845556,Haven - Client Onboarding,KEDA,120
+2025-03-17,1209560058794355,Bambee - Client Support,Tak Service Auto Deployment Sensor Fails to trigger,30
+2025-04-14,1209906286845556,Haven - Client Onboarding,Haven CICD infra,42
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Production Upgrade Complete,
+2025-03-17,1209560058794355,Bambee - Client Support,Snowflake Network Policy,38
+2025-04-07,1209560058794355,Bambee - Client Support,cicd api v1 not in stage,30
+2025-03-10,1209560058794355,Bambee - Client Support,Datadog Contract Renewal,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Stage Testing Successful Confirmation,
+2025-04-07,1209906286845556,Haven - Client Onboarding,Create haven@panfactum.com group,
+2025-03-17,1209550294079397,Implentio - Support,Argo events dropped due to NATS connection Discvoery,233
+2025-03-10,1209582562638781,Selflessly Client Upgrade,Production Upgrade,480
+2025-03-17,1209550294079397,Implentio - Support,pgbouncer timeout diff with upgraded module,22
+2025-03-17,1209560058794339,Hudson - Client Support,authentik  crashing when viewing certificate page,45
+2025-03-24,1209560058794339,Hudson - Client Support,Certs Page Causing Crash,30
+2025-04-14,1209560058794355,Bambee - Client Support,cronjob pod resource holder,
+2025-03-10,1209589167360782,Bambee - Client Onboarding,Global Env,
+2025-03-10,1209582562638781,Selflessly Client Upgrade,Provide status update after upgrade completion,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Production Upgrade Complete,
+2025-03-10,1209550293985387,Implentio - Onboarding,check idle ebs volumes,6
+2025-02-24,1209560058794355,Bambee - Client Support,Production Cut-Over Plan Guide,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Confirmation to proceed upgrading Production,
+2025-04-28,1209913161177535,Selflessly - Support,Notification on AWS Invoice Non Payment,5
+2025-03-17,1209582562638781,Selflessly Client Upgrade,RDS Production Upgrade,203
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Upgrade Environments,
+2025-04-07,1209906286845556,Haven - Client Onboarding,Setup CICD,1338
+2025-03-03,1209550293985387,Implentio - Onboarding,Fix terragrunt get-pf-commit-hash,15
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Stage Upgrade Complete,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Upgrade Environments,
+2025-04-21,1209550294079397,Implentio - Support,Prod Argo Upgrade,30
+2025-03-10,1209560058794355,Bambee - Client Support,stage auto-deployment error,158
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Stage Upgrade Complete,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Production Upgrade Complete,
+2025-04-28,1210137658881162,Selflessly Stable Upgrade,Upgrade Notification,
+2025-04-28,1210137657914113,Haven - Stable Upgrade,Upgrade Kick Off Meeting,
+2025-04-21,1209550294079397,Implentio - Support,Sensor Event Error,70
+2025-03-03,1209550293985387,Implentio - Onboarding,Upgrade implentio_metabase module to utilize postgres,
+2025-03-03,1209582562638781,Selflessly Client Upgrade,Migrate CICD to stage,240
+2025-04-07,1209906286845556,Haven - Client Onboarding,Discuss subdomain approach with Jay at Haven project,
+2025-04-21,1209906286845556,Haven - Client Onboarding,Workload Deployments,139
+2025-03-24,1209560058794355,Bambee - Client Support,kill production controller,30
+2025-03-17,1209560058794355,Bambee - Client Support,Mongo SSO Tommy Not in Org,101
+2025-03-24,1209560058794355,Bambee - Client Support,CICD Improvement Plan Response to Nate,10
+2025-04-21,1209550294079397,Implentio - Support,deploy locked for longer than deadline,
+2025-04-07,1209560058794339,Hudson - Client Support,ipv6 AAAA record for cloudfront,10
+2025-04-07,1209906286845556,Haven - Client Onboarding,Get infrastructure credentials,
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Draft Upgrade Plan for Kick Off,
+2025-03-24,1209560058794355,Bambee - Client Support,Build faileed,17
+2025-04-14,1209906286845556,Haven - Client Onboarding,meeting with haven,90
+2025-03-24,1209560058794355,Bambee - Client Support,infra cleanup,31
+2025-03-10,1209560058794355,Bambee - Client Support,Investigate and set up Vertical Pod Autoscaler (VPA) for Datadog nodes to optimize resource usage.,
+2025-04-21,1209906286845556,Haven - Client Onboarding,jae local dev setup,30
+2025-04-28,1210137658881168,Bambee Stable Upgrade,Stage Upgrade Complete,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Production Upgrade Complete,
+2025-04-28,1210137658881180,Hudson Stable Upgrade,Upgrade Schedule Confirmation,
+2025-03-03,1209589167360782,Bambee - Client Onboarding,Error Log Review,88
+2025-03-24,1209560058794355,Bambee - Client Support,cicd not deploy to prod,96
+2025-03-17,1209550294079397,Implentio - Support,enable vpa for implentio db,177
+2025-03-24,1209560058794355,Bambee - Client Support,gaston pat github dependencies,19
+2025-03-10,1209560058794355,Bambee - Client Support,Compute Cost Savings Plan,513
+2025-03-17,1209560058794355,Bambee - Client Support,remove bambee legacy iac directories from repos,20
+2025-04-21,1209906286845556,Haven - Client Onboarding,Cloudflare DNS Proxy Test,10
+2025-03-10,1209589167360782,Bambee - Client Onboarding,increase bambee to 50% traffic,
+2025-04-14,1209906286845556,Haven - Client Onboarding,haven hpa,186

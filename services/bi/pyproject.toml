@@ -1,0 +1,21 @@
+[project]
+name = "bi"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "James Lee",email = "uptownhr@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core (>=1.9.4,<2.0.0)",
+    "dbt-duckdb (>=1.9.3,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false

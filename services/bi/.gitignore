@@ -1,3 +1,5 @@
+duckdb*
 *.duckdb*
 *.log
 data
+node_modules

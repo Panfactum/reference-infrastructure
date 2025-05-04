@@ -1,0 +1,9 @@
+models:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../duckdb_data.db  # Path relative to the profile
+      extensions:
+        - httpfs
+        - parquet
