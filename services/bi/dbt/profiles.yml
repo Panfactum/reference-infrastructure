@@ -4,6 +4,7 @@ models:
     dev:
       type: duckdb
       path: ../bi.duckdb  # Path relative to the profile
+      schema: 'pf'
       extensions:
         - httpfs
         - parquet

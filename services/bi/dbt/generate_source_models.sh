@@ -34,7 +34,7 @@ generate_models() {
       # Check if there are any JSONL files in this table directory
       if ls "$table_path"/*.jsonl 1> /dev/null 2>&1; then
         # Create the model name and file path
-        model_name="src_${source_dir}_${table_dir}"
+        model_name="${source_dir}_${table_dir}"
         model_file="$source_models_dir/${model_name}.sql"
         
         # Skip if we've already processed this combination

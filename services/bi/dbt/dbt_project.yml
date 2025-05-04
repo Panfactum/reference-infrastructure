@@ -33,8 +33,13 @@ vars:
 # files using the `{{ config(...) }}` macro.
 models:
   bi_project:
-    +schema: main
     +materialized: table
 
     sources:
-      +schema: sources
+      +schema: src
+
+    stage:
+      +schema: stg
+
+    intermediate:
+      +schema: int
