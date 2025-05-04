@@ -20,6 +20,7 @@ for SOURCE_DIR in $SOURCE_DIRS; do
   # Append source information to the file
   cat >> "$OUTPUT_FILE" << EOL
   - name: $SOURCE_DIR
+    schema: "sources"
     meta:
       external_location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/$SOURCE_DIR/{name}/*.jsonl"
     tables:

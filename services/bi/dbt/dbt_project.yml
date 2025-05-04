@@ -33,6 +33,8 @@ vars:
 # files using the `{{ config(...) }}` macro.
 models:
   bi_project:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    +schema: main
+    +materialized: table
+
+    sources:
+      +schema: sources

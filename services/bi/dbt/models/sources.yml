@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: asana
+    schema: "sources"
     meta:
       external_location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/{name}/*.jsonl"
     tables:
@@ -15,6 +16,7 @@ sources:
       - name: workspaces
 
   - name: stripe
+    schema: "sources"
     meta:
       external_location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/{name}/*.jsonl"
     tables:
