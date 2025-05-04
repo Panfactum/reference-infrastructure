@@ -11,7 +11,9 @@ This project uses dbt with DuckDB to automatically load JSONL files as tables. I
 ## Development
 
 1. sync aws s3 bucket to `data` directory
+2. run `nix develop`
 2. run `dev`
+3. run `run` - triggers a dbt run to recreate models
 
 ## Rebuilding Source Models
 1. run `./generate_sources.sh`

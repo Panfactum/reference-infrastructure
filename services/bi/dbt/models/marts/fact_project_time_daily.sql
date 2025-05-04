@@ -4,7 +4,9 @@ WITH daily_tasks AS (
         task_gid,
         project_gid,
         DATE_TRUNC('day', completed_at) AS completion_date,
-        COALESCE(actual_time_minutes, 0) AS time_minutes
+        time_minutes,
+        time_hours,
+        cost
     FROM
         {{ ref('project_tasks') }}
     WHERE
@@ -18,7 +20,8 @@ SELECT
     pc.project_type,
     pc.team,
     SUM(dt.time_minutes) AS total_minutes,
-    ROUND(SUM(dt.time_minutes) / 60.0, 2) AS total_hours
+    SUM(dt.time_hours) AS total_hours,
+    SUM(dt.cost) AS total_cost
 FROM
     daily_tasks dt
         JOIN {{ ref('dim_projects_classified') }} pc ON dt.project_gid = pc.project_gid

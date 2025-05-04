@@ -45,4 +45,4 @@ sources:
         meta:
           plugin: gsheet # Explicitly declare the plugin
           url: "https://docs.google.com/spreadsheets/d/1KsC-tBeyBi2oYS0xLmARGA-g1INDlhU4ZW1dZmjLOcw/edit#gid=0"
-          worksheet: 6
+          worksheet: 0

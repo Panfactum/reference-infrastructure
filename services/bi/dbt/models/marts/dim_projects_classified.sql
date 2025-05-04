@@ -6,7 +6,8 @@ projects_with_tasks AS (
         pt.project_gid,
         COUNT(CASE WHEN pt.completed = TRUE THEN 1 END) AS completed_tasks,
         COUNT(*) AS total_tasks,
-        SUM(COALESCE(pt.actual_time_minutes, 0)) AS total_minutes
+        SUM(COALESCE(pt.time_minutes, 0)) AS total_minutes,
+        SUM(COALESCE(pt.cost, 0)) AS total_cost
     FROM
         {{ ref('project_tasks') }} pt
 GROUP BY
@@ -30,10 +31,13 @@ SELECT
     -- Add total hours calculation
     ROUND(pt.total_minutes / 60.0, 2) AS total_hours,
 
+    -- Add total cost calculation
+    pt.total_cost,
+
     -- Project completion rate
     CASE
         WHEN pt.total_tasks > 0 THEN
-            ROUND((pt.completed_tasks::FLOAT / pt.total_tasks) * 100, 2)
+            CAST(ROUND((pt.completed_tasks::DECIMAL(12,2) / pt.total_tasks) * 100, 2) AS DECIMAL(12,2))
         ELSE 0
         END AS completion_percentage,
 
@@ -43,14 +47,14 @@ SELECT
         WHEN p.name ILIKE '%upgrade%' THEN 'Upgrade'
         WHEN p.name ILIKE '%support%' THEN 'Support'
         ELSE 'Other'
-END AS project_type,
+        END AS project_type,
 
     CASE
         WHEN p.name ILIKE '%onboarding%' THEN 'Service'
         WHEN p.name ILIKE '%upgrade%' THEN 'Service'
         WHEN p.name ILIKE '%support%' THEN 'Service'
         ELSE 'Other'
-    END AS team,
+        END AS team,
 
     -- Additional classification - project status
     CASE
@@ -59,7 +63,7 @@ END AS project_type,
         WHEN pt.completed_tasks > 0 AND pt.total_tasks > 0 THEN 'In Progress'
         WHEN pt.completed_tasks = 0 AND pt.total_tasks > 0 THEN 'Not Started'
         ELSE 'No Tasks'
-END AS project_status,
+        END AS project_status
 
 FROM
     {{ ref('projects') }} p
