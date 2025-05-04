@@ -1,0 +1,231 @@
+version: 2
+
+sources:
+  - name: jsonl_files
+    schema: main
+    tables:
+      - name: asana_custom_fields
+        description: "Combined data from 1 JSONL files in asana/custom_fields directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/custom_fields/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_portfolios
+        description: "Combined data from 1 JSONL files in asana/portfolios directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/portfolios/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_portfolios_compact
+        description: "Combined data from 1 JSONL files in asana/portfolios_compact directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/portfolios_compact/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_portfolios_memberships
+        description: "Combined data from 1 JSONL files in asana/portfolios_memberships directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/portfolios_memberships/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_projects
+        description: "Combined data from 1 JSONL files in asana/projects directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/projects/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_tasks
+        description: "Combined data from 1 JSONL files in asana/tasks directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/tasks/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_users
+        description: "Combined data from 1 JSONL files in asana/users directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/users/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: asana_workspaces
+        description: "Combined data from 1 JSONL files in asana/workspaces directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/asana/workspaces/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_balance_transactions
+        description: "Combined data from 1 JSONL files in stripe/balance_transactions directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/balance_transactions/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_charges
+        description: "Combined data from 1 JSONL files in stripe/charges directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/charges/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_customer_balance_transactions
+        description: "Combined data from 1 JSONL files in stripe/customer_balance_transactions directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/customer_balance_transactions/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_customers
+        description: "Combined data from 1 JSONL files in stripe/customers directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/customers/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_events
+        description: "Combined data from 1 JSONL files in stripe/events directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/events/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_external_account_bank_accounts
+        description: "Combined data from 1 JSONL files in stripe/external_account_bank_accounts directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/external_account_bank_accounts/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_invoices
+        description: "Combined data from 1 JSONL files in stripe/invoices directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/invoices/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_payment_intents
+        description: "Combined data from 1 JSONL files in stripe/payment_intents directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/payment_intents/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_payment_methods
+        description: "Combined data from 1 JSONL files in stripe/payment_methods directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/payment_methods/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_plans
+        description: "Combined data from 1 JSONL files in stripe/plans directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/plans/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_prices
+        description: "Combined data from 1 JSONL files in stripe/prices directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/prices/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_products
+        description: "Combined data from 1 JSONL files in stripe/products directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/products/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_setup_intents
+        description: "Combined data from 1 JSONL files in stripe/setup_intents directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/setup_intents/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_subscription_items
+        description: "Combined data from 1 JSONL files in stripe/subscription_items directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/subscription_items/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_subscription_schedule
+        description: "Combined data from 1 JSONL files in stripe/subscription_schedule directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/subscription_schedule/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_subscriptions
+        description: "Combined data from 1 JSONL files in stripe/subscriptions directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/subscriptions/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+
+      - name: stripe_usage_records
+        description: "Combined data from 1 JSONL files in stripe/usage_records directory"
+        external:
+          location: "/home/uptown/Projects/panfactum/reference-infrastructure/services/bi/data/stripe/usage_records/*.jsonl"
+          options:
+            format: json
+            auto_detect: true
+            union_by_name: true
+

@@ -3,7 +3,7 @@ models:
   outputs:
     dev:
       type: duckdb
-      path: ../duckdb_data.db  # Path relative to the profile
+      path: ../bi.duckdb  # Path relative to the profile
       extensions:
         - httpfs
         - parquet
