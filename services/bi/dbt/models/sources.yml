@@ -41,7 +41,7 @@ sources:
   - name: gsheet
     schema: "gsheet"
     tables:
-      - name: gross_margin
+      - name: customers
         meta:
           plugin: gsheet # Explicitly declare the plugin
           url: "https://docs.google.com/spreadsheets/d/1KsC-tBeyBi2oYS0xLmARGA-g1INDlhU4ZW1dZmjLOcw/edit#gid=0"
