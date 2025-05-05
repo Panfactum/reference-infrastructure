@@ -33,9 +33,6 @@ sources:
       - name: prices
       - name: products
       - name: setup_intents
-      - name: subscription_items
-      - name: subscription_schedule
-      - name: subscriptions
       - name: usage_records
 
   - name: gsheet

@@ -14,7 +14,8 @@
     "duckdb-web": "./duckdb_web_viewer.ts"
   },
   "dependencies": {
-    "duckdb": "^1.2.1"
+    "duckdb": "^1.2.1",
+    "yaml": "^2.3.1"
   },
   "devDependencies": {
     "bun-types": "latest"
