@@ -2,7 +2,7 @@
 
 WITH daily_tasks AS (
     SELECT
-    DATE(completed_at) AS date_day,
+    DATE_TRUNC('day', completed_at) AS completion_date,
     workload,
     SUM(time_minutes) AS total_minutes,
     SUM(time_hours) AS total_hours,
@@ -12,14 +12,14 @@ FROM
     {{ ref('project_tasks') }}
 WHERE
     completed = true
-  AND completed_at IS NOT NULL
+  AND completed IS NOT NULL
   AND workload IS NOT NULL
 GROUP BY
     1, 2
     )
 
 SELECT
-    date_day,
+    completion_date,
     workload,
     total_minutes,
     total_hours,
@@ -28,5 +28,5 @@ SELECT
 FROM
     daily_tasks
 ORDER BY
-    date_day DESC,
+    completion_date DESC,
     workload
