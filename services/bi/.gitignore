@@ -3,3 +3,5 @@ duckdb*
 *.log
 data
 node_modules
+dbt/logs
+dbt/target
