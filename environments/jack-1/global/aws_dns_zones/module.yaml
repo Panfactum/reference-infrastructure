@@ -1,4 +1,0 @@
-extra_inputs:
-  domains:
-    jack-1.panfactum.com:
-      dnssec_enabled: true
