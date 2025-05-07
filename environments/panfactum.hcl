@@ -12,9 +12,9 @@ locals {
   # see https://panfactum.com/docs/edge/reference/configuration/terragrunt-variables
   ############################################################################################
 
-  vars = jsondecode(run_cmd("--terragrunt-quiet", "pf", "config", "get"))
+  vars         = jsondecode(run_cmd("--terragrunt-quiet", "pf", "config", "get"))
   extra_inputs = local.vars.extra_inputs
-  extra_tags = local.vars.extra_tags
+  extra_tags   = local.vars.extra_tags
 
   ############################################################################################
   # Provider Activation
@@ -42,7 +42,6 @@ locals {
 
   # The module to deploy - This logic is used BOTH for Panfactum modules and first-party IaC
   module = lookup(local.vars, "module", basename(get_original_terragrunt_dir()))
-  #module = basename(get_original_terragrunt_dir())
 
   # Inspect the terragrunt.hcl that includes this shared file. If it uses the 'pf_stack_source'
   # local, that means it is almost certainly deploying a Panfactum module directly (vs a first-party IaC module)
@@ -85,7 +84,7 @@ locals {
   # The relative path from the directory where tf is actually run (in .terragrunt-cache) to the local copy of the Panfactum modules
   # Note that this will change depending on whether the first-party IaC modules are themselves using local code or if they are pulling from the remote git repo
   # TODO: update when https://github.com/gruntwork-io/terragrunt/issues/3896 is resolved
-  pf_stack_local_relative_path_from_working_dir = "${local.use_local_iac ? "../../../.." : "../../../../${join("/", [for segment in split("/", local.repo_vars.iac_dir_from_git_root) : ".."])}"}/${local.pf_stack_local_relative_path_from_root}"
+  pf_stack_local_relative_path_from_working_dir = "${local.use_local_iac ? "../../../.." : "../../../../${join("/", [for segment in split("/", local.vars.local.vars.iac_relative_dir) : ".."])}"}/${local.pf_stack_local_relative_path_from_root}"
 
   # The terraform.source to use if deploying a "direct" Panfactum module (i.e., not a submodule)
   # TODO: It is unclear to me why we don't support relative paths here, so let's investigate in the future.
@@ -94,13 +93,12 @@ locals {
   ############################################################################################
   # Repo metadata
   ############################################################################################
-  repo_vars              = jsondecode(run_cmd("--terragrunt-global-cache", "--terragrunt-quiet", "pf-get-repo-variables"))
-  repo_url               = local.repo_vars.repo_url
+  repo_url               = local.vars.repo_url
   repo_authentication    = try("${get_env("GIT_USERNAME")}${try(":${get_env("GIT_PASSWORD")}", "")}@", "")
   authenticated_repo_url = "git::https://${local.repo_authentication}${trimprefix(local.repo_url, "git::https://")}"
-  repo_name              = local.repo_vars.repo_name
-  repo_root              = local.repo_vars.repo_root
-  primary_branch         = local.repo_vars.repo_primary_branch
+  repo_name              = local.vars.repo_name
+  repo_root              = local.vars.repo_root
+  primary_branch         = local.vars.repo_primary_branch
 
   ############################################################################################
   # How to source first-party IaC modules
@@ -121,11 +119,10 @@ locals {
 
   # The terraform.source for the first-party IaC
   # Note that the location of the // is intentional and changes depending on whether local or not.
-  # Additionally note the difference b/w iac_dir_from_root and iac_dir_from_git_root -- This is also intentional as hack to workaround the fact that the reference repo isn't at the git root.
   source = (
     local.use_local_iac ?
-    "${local.repo_root}/${local.repo_vars.iac_dir_from_root}//${local.module}" :
-    "${local.authenticated_repo_url}//${local.repo_vars.iac_dir_from_git_root}/${local.module}?ref=${local.version_hash}"
+    "${local.vars.iac_dir}//${local.module}" :
+    "${local.authenticated_repo_url}//${local.vars.iac_relative_dir}/${local.module}?ref=${local.version_hash}"
   )
 
   ############################################################################################
@@ -295,7 +292,7 @@ generate "authentik_provider" {
   disable     = !local.enable_authentik
   if_disabled = "remove"
   contents = templatefile("${local.provider_folder}/authentik.tftpl", {
-    authentik_url = local.vars.authentik_url
+    authentik_url = lookup(local.vars, "authentik_url", "@@TERRAGRUNT_INVALID@@")
   })
 }
 

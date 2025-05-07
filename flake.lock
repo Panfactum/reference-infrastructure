@@ -265,8 +265,8 @@
         "vaultPkgsSrc": "vaultPkgsSrc"
       },
       "locked": {
-        "lastModified": 1745791391,
-        "narHash": "sha256-I630GafrYXDtG9tDLXiEiJi9lJa/2xaevcI/VcB3nog=",
+        "lastModified": 1746113111,
+        "narHash": "sha256-Vc7Y2ajQytuEiypCmTlG0bgEhHhFgRfqcgH4PGVXR0M=",
         "path": "/home/jack/repos/panfactum/stack",
         "type": "path"
       },
