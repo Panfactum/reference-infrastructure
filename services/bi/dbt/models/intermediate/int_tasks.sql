@@ -9,18 +9,23 @@ WITH projects AS (
         {{ ref('projects') }}
 ),
 
--- Extract task type from project name
-project_task_types AS (
-    SELECT
-        project_gid,
-        -- Extract everything after the first dash and trim
-        TRIM(SPLIT_PART(project_name, '-', 2)) AS task_type
-    FROM
-        projects
-    WHERE
-        -- Ensure the project follows the expected format
-        project_name LIKE '% - %'
-),
+-- Extract task type from project name and map to standardized types
+ project_task_types AS (
+     SELECT
+         project_gid,
+         -- Map the extracted task types to standardized categories
+         CASE
+             WHEN TRIM(SPLIT_PART(project_name, '-', 2)) = 'Stable Upgrade' THEN 'Client Upgrade'
+             WHEN TRIM(SPLIT_PART(project_name, '-', 2)) = 'Onboarding' THEN 'Client Onboarding'
+             WHEN TRIM(SPLIT_PART(project_name, '-', 2)) = 'Support' THEN 'Client Support'
+             ELSE TRIM(SPLIT_PART(project_name, '-', 2)) -- Keep original if no mapping found
+             END AS task_type
+     FROM
+         projects
+     WHERE
+         -- Ensure the project follows the expected format
+         project_name LIKE '% - %'
+ ),
 
 -- Project to customer mapping
 project_customers AS (
@@ -72,3 +77,4 @@ LEFT JOIN
     project_customers pc ON tb.project_gid = pc.project_gid
 WHERE
     task_type != 'Unknown'
+and customer_id is not null
