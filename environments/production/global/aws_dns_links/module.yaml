@@ -9,3 +9,11 @@ extra_inputs:
           - ns-1499.awsdns-59.org
         ds_record: 30903 13 2
           EA3CB2F620B79E715DC6812C88B363187ED8A6D1FC477FCB4D60FD720C0241EF
+      - subdomain: dev
+        name_servers:
+          - ns-365.awsdns-45.com
+          - ns-1186.awsdns-20.org
+          - ns-925.awsdns-51.net
+          - ns-1923.awsdns-48.co.uk
+        ds_record: 49444 13 2
+          E0D52067DE47323B2145AEA9E82E342DFB4D923BB2470B2C769E2F84E0A096EE
