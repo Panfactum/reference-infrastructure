@@ -33,7 +33,7 @@
             export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.zlib}/lib:${pkgs.libxml2}/lib:$LD_LIBRARY_PATH
 
             # Set DBT_PROFILES_DIR environment variable
-            export DBT_PROFILES_DIR="$PWD/dbt"
+            export DBT_PROFILES_DIR="$PWD"
 
             echo "BI environment activated with DuckDB 1.2.2 and Poetry!"
             
