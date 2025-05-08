@@ -7,6 +7,12 @@ This project uses dbt with DuckDB to automatically load JSONL files as tables. I
 1. install [duckdb](https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct)
 2. enable [gsheet](https://duckdb.org/community_extensions/extensions/gsheets.html) plugin
 3. setup `~/.config/gspread/credentials.json` exists. Setup from https://console.cloud.google.com/apis/credentials?project=arboreal-moment-458810-a5
+    1. Create credentials
+    2. Select Oauth client ID
+    3. Select Desktop app
+    4. Provide a name 
+    5. Download the JSON file
+    6. Place in `~/.config/gspread/credentials.json` 
 
 ## Generate Source Models
 1. run `aws s3 sync s3://airbyte-dest-589950d8851030f4 ./data`
