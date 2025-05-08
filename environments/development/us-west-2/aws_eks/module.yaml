@@ -1,5 +1,0 @@
-extra_inputs:
-  bootstrap_mode_enabled: false
-  cluster_name: development-us-west-2
-  cluster_description: Panfactum Kubernetes cluster in the us-west-2 region of the
-    development environment

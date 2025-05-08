@@ -265,14 +265,18 @@
         "vaultPkgsSrc": "vaultPkgsSrc"
       },
       "locked": {
-        "lastModified": 1746113111,
-        "narHash": "sha256-Vc7Y2ajQytuEiypCmTlG0bgEhHhFgRfqcgH4PGVXR0M=",
-        "path": "/home/jack/repos/panfactum/stack",
-        "type": "path"
+        "lastModified": 1746667045,
+        "narHash": "sha256-dclcKk3HHF3KhoGFT0QoQnzNaTAe9xOE2BfyJX4ql0I=",
+        "owner": "panfactum",
+        "repo": "stack",
+        "rev": "9a9955d5a7633cf0710b17b00406c1395fdce557",
+        "type": "github"
       },
       "original": {
-        "path": "/home/jack/repos/panfactum/stack",
-        "type": "path"
+        "owner": "panfactum",
+        "ref": "main",
+        "repo": "stack",
+        "type": "github"
       }
     },
     "postgresPkgsSrc": {
