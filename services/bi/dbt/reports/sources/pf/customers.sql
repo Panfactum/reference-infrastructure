@@ -1,0 +1,1 @@
+select * from bi.int.int_customers

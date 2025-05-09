@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: pf
+type: duckdb
+options:
+  filename: ../../../../bi.duckdb
