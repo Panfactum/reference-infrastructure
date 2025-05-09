@@ -8,27 +8,3 @@ creation_rules:
   - path_regex: .*/production/.*
     aws_profile: production-superuser
     kms: arn:aws:kms:us-east-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c,arn:aws:kms:us-west-2:891377197483:key/mrk-d8075b5c1dc8468db33448f40ae92b5c
-  - path_regex: .*/test/.*
-    aws_profile: development-superuser
-    kms: arn:aws:kms:us-east-1:471112902605:key/mrk-0f6732203c8d43dfb8d764dd2b89bb8a,arn:aws:kms:us-east-2:471112902605:key/mrk-0f6732203c8d43dfb8d764dd2b89bb8a
-  - path_regex: .*/pf-test-6/.*
-    aws_profile: pf-test-6-superuser
-    kms: arn:aws:kms:us-east-1:195287220387:key/mrk-a0b1975df50c4ceeb2a4b857666dfeb2,arn:aws:kms:us-east-2:195287220387:key/mrk-a0b1975df50c4ceeb2a4b857666dfeb2
-  - path_regex: .*/pf-test-53/.*
-    aws_profile: pf-test-53-superuser
-    kms: arn:aws:kms:us-east-1:257086469067:key/mrk-001d2f561cfc4bf39d111b920182400b,arn:aws:kms:us-east-2:257086469067:key/mrk-001d2f561cfc4bf39d111b920182400b
-  - path_regex: .*/pf-test-71/.*
-    aws_profile: pf-test-71-superuser
-    kms: arn:aws:kms:us-east-1:565934498888:key/mrk-47ba621878eb4868b1d4c88d14f07b4e,arn:aws:kms:us-east-2:565934498888:key/mrk-47ba621878eb4868b1d4c88d14f07b4e
-  - path_regex: .*/james-2/.*
-    aws_profile: james-2-superuser
-    kms: arn:aws:kms:us-east-2:464666915259:key/mrk-433de5e0325c49739e20c4eb6a5531c4,arn:aws:kms:us-east-1:464666915259:key/mrk-433de5e0325c49739e20c4eb6a5531c4
-  - path_regex: .*/james-3/.*
-    aws_profile: james-3-superuser
-    kms: arn:aws:kms:us-east-2:493867538912:key/mrk-a33cdec7c98d493f89496422705cb656,arn:aws:kms:us-east-1:493867538912:key/mrk-a33cdec7c98d493f89496422705cb656
-  - path_regex: .*/james-6/.*
-    aws_profile: james-6-superuser
-    kms: arn:aws:kms:us-east-2:399184192941:key/mrk-13c6ece8320a4cd087e842437f9c63b6,arn:aws:kms:us-east-1:399184192941:key/mrk-13c6ece8320a4cd087e842437f9c63b6
-  - path_regex: .*/jack-1/.*
-    aws_profile: jack-1-superuser
-    kms: arn:aws:kms:ca-central-1:955425229159:key/mrk-dd7ef68734114943b6cb9fc9c4c13750,arn:aws:kms:us-west-2:955425229159:key/mrk-dd7ef68734114943b6cb9fc9c4c13750
