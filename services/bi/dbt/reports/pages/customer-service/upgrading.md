@@ -28,8 +28,6 @@ select
     <DropdownOption value="%" valueLabel="All Customers"/>
 </Dropdown>
 
-show: ${inputs.customer.value == '%' ? 'true' : 'false'}
-
 ```sql customer_hours
 from tasks 
 left join customers
@@ -42,8 +40,6 @@ where task_type = 'Client Upgrade'
 and customer_name like '${inputs.customer.value}'
 group by 1, 2 
 ```
-
-
 
 <BarChart
     data={customer_hours}
