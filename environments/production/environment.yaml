@@ -1,7 +1,4 @@
 domains:
-  jack-8.panfactum.com:
-    zone_id: Z0318624P6TJ9FWAVHZW
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
   getpanfactum.com:
     zone_id: Z03246823HHIAC4AIYJGH
     record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
@@ -14,35 +11,8 @@ domains:
   trypanfactum.com:
     zone_id: Z10413681QCYMX4DRRJ41
     record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
-  jack-2.panfactum.com:
-    zone_id: Z09336491CP3NVW08UKQ1
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  jack-3.panfactum.com:
-    zone_id: Z03251412SJOQP75I2J3D
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  jack-4.panfactum.com:
-    zone_id: Z03270643OSQ1QUPMDZOS
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  jack-5.panfactum.com:
-    zone_id: Z092131632V0VJJKNA3A
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  jack-7.panfactum.com:
-    zone_id: Z0211263O3T5USKT391G
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
   panfactum.ai:
     zone_id: Z0682551242UUKR8WFRFJ
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  pftest12345.panfactum.com:
-    zone_id: Z05577323BEJA947YNAUX
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  pftest123456.panfactum.com:
-    zone_id: Z05632283IF8846J7V7UE
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  test123.panfactum.com:
-    zone_id: Z070016535P4NDWHV83CL
-    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
-  test1234.panfactum.com:
-    zone_id: Z0200519P3XG3Y0NJRWX
     record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
 extra_tags: {}
 environment: production

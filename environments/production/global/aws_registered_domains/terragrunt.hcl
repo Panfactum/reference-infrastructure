@@ -7,5 +7,4 @@ terraform {
   source = include.panfactum.locals.pf_stack_source
 }
 
-
 inputs = {}

@@ -1,14 +1,6 @@
 extra_inputs:
   links:
     panfactum.com:
-      - subdomain: jack-8
-        name_servers:
-          - ns-537.awsdns-03.net
-          - ns-1564.awsdns-03.co.uk
-          - ns-83.awsdns-10.com
-          - ns-1499.awsdns-59.org
-        ds_record: 30903 13 2
-          EA3CB2F620B79E715DC6812C88B363187ED8A6D1FC477FCB4D60FD720C0241EF
       - subdomain: dev
         name_servers:
           - ns-365.awsdns-45.com
