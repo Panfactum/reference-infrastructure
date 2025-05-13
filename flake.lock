@@ -265,11 +265,11 @@
         "vaultPkgsSrc": "vaultPkgsSrc"
       },
       "locked": {
-        "lastModified": 1746667045,
-        "narHash": "sha256-dclcKk3HHF3KhoGFT0QoQnzNaTAe9xOE2BfyJX4ql0I=",
+        "lastModified": 1747101458,
+        "narHash": "sha256-7sik/2PrVfP3KNJnIjxpLpFRjfGBR3c569r/tRcIgv8=",
         "owner": "panfactum",
         "repo": "stack",
-        "rev": "9a9955d5a7633cf0710b17b00406c1395fdce557",
+        "rev": "d14a548a5cd98b7e2bfee632bbe118459be04b6a",
         "type": "github"
       },
       "original": {

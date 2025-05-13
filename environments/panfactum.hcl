@@ -192,14 +192,66 @@ terraform {
     ]
   }
 
-  after_hook "status" {
+
+  before_hook "deploy_status" {
     commands = ["apply"]
-    execute  = ["bash", "-c", "echo 'status: applied' > '${get_original_terragrunt_dir()}/.pf.yaml'"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--deploy-status", "running"
+    ]
   }
 
-  error_hook "status" {
-    commands  = ["apply"]
-    execute   = ["bash", "-c", "echo 'status: error' > '${get_original_terragrunt_dir()}/.pf.yaml'"]
+  after_hook "deploy_status" {
+    commands = ["apply"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--deploy-status", "success"
+    ]
+  }
+
+  error_hook "deploy_status" {
+    commands = ["apply"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--deploy-status", "error"
+    ]
+    on_errors = [".*"]
+  }
+
+  before_hook "init_status" {
+    commands = ["init"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--init-status", "running"
+    ]
+  }
+
+  after_hook "init_status" {
+    commands = ["init"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--init-status", "success"
+    ]
+  }
+
+  error_hook "init_status" {
+    commands = ["init"]
+    execute = [
+      "pf",
+      "iac", "update-module-status",
+      "-m", get_original_terragrunt_dir(),
+      "--init-status", "error"
+    ]
     on_errors = [".*"]
   }
 }
@@ -449,5 +501,7 @@ inputs = merge(
     pf_module_source = local.use_local_pf_modules ? (local.pf_stack_local_use_relative ? "${local.pf_stack_local_relative_path_from_working_dir}/packages/infrastructure//" : "${local.pf_stack_local_absolute_path}/packages/infrastructure//") : "https://modules.panfactum.com/${local.pf_stack_version_commit_hash}/modules.tar.gz//"
     pf_module_ref    = local.use_local_pf_modules ? (local.pf_stack_local_use_relative ? "" : "?ref=${local.pf_stack_local_ref}") : ""
     sla_target       = local.sla_target
+    route53_zones    = lookup(local.vars, "domains", {})
+    kube_domain      = lookup(local.vars, "kube_domain", null)
   }
 )

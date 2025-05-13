@@ -1,6 +1,5 @@
 # Authentik
 authentik_url: https://authentik.panfactum.com
-control_plane_domain: "panfactum.com"
 
 # Test tags
 extra_tags:

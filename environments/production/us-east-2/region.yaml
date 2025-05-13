@@ -6,6 +6,7 @@ aws_region: "us-east-2" # The AWS region to use for the aws provider
 aws_secondary_region: "us-west-2" # The secondary/backup region to use for the aws_secondary provider
 
 # Kubernetes
+kube_domain: "prod.panfactum.com"
 kube_config_context: "production-primary"
 kube_api_server: "https://83063DDB274B2A04B6A7DC29DCB1740E.gr7.us-east-2.eks.amazonaws.com"
 
