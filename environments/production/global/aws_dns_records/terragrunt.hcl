@@ -43,6 +43,12 @@ inputs = {
           ]
         }
       ]
+      cname_records = [
+        {
+          subdomain = "emailtracking"
+          record    = "open.sleadtrack.com"
+        }
+      ]
     }
     "trypanfactum.com" = {
       txt_records = [
