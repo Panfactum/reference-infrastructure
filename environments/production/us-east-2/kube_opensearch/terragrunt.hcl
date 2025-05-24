@@ -9,4 +9,6 @@ terraform {
 
 inputs = {
   namespace = "default"
+  dashboard_enabled = true
+  dashboard_domain = "opensearch.prod.panfactum.com"
 }

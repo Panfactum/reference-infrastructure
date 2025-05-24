@@ -14,6 +14,9 @@ domains:
   panfactum.ai:
     zone_id: Z0682551242UUKR8WFRFJ
     record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250423130851566300000004
+  panfactum.io:
+    zone_id: Z0932828144ZBRC78HTUA
+    record_manager_role_arn: arn:aws:iam::891377197483:role/route53-record-manager-20250425205408506600000001
 extra_tags: {}
 environment: production
 extra_inputs: {}

@@ -4,6 +4,7 @@ extra_inputs:
     - getpanfactum.com
     - trypanfactum.com
     - panfactum.org
+    - panfactum.io
   admin_contact:
     organization_name: Panfactum
     first_name: Jack

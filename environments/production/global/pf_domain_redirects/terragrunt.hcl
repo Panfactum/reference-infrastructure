@@ -13,5 +13,5 @@ dependency "registered_domains" {
 }
 
 inputs = {
-  domains = ["getpanfactum.com", "trypanfactum.com"]
+  domains = ["getpanfactum.com", "trypanfactum.com", "panfactum.io"]
 }

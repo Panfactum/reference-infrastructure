@@ -9,6 +9,41 @@ terraform {
 
 inputs = {
   zones = {
+    "panfactum.io" = {
+      txt_records = [
+        {
+          subdomain = ""
+          records = [
+            "google-site-verification=tenvTVieM24GKkkL1rRMsv2ZcZK8iqYNxASZYH6deV4", // Google Site Verification
+            "v=spf1 mx include:_spf.google.com ~all",                               // SPF record authorizing email senders
+          ]
+        },
+
+        // DKIM (email - google)
+        # {
+        #   subdomain = "google._domainkey."
+        #   records = [
+        #     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs2DiViVSWtU/jloGJ10bD7usBBcdBw9tVeVD1a8H5t9onb4vM7VvsbI3P+FF2p2+nIGjOfnTs0HbxNe2cZ+YPw7gNxsuDkFRnNxiwNaImeKS0SBQYQ4R5+q1tY2Xgm49xqdkWiPgPPMMtIQxrUSc3gZcpgfBaQHwX/Ca33FMLSOFnm7yGs6wvDhsbUsZvCd300//glJseGYyoYCj3bcVK7bpHdF91CcKEsUK/bd1GJc6FjfsZNGVgr1cRUpHO+It914c41XPCQRMuCZbb0jTy9Su4ahEQot3lyyoqKtrQB+XsytP7CDbgGuFnR7azbuivLvkDwtVPo3dia4vO/QT6QIDAQAB"
+        #   ]
+        # },
+
+        // DMARC (email)
+        {
+          subdomain = "_dmarc."
+          records = [
+            "v=DMARC1; p=reject; rua=mailto:ipm6uhv@ar.glockapps.com; ruf=mailto:ipm6uhv@fr.glockapps.com; fo=1;"
+          ]
+        }
+      ]
+      mx_records = [
+        {
+          subdomain = ""
+          records = [
+            "1 smtp.google.com"
+          ]
+        }
+      ]
+    }
     "trypanfactum.com" = {
       txt_records = [
         {
