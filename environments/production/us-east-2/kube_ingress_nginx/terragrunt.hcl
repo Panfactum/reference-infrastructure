@@ -11,8 +11,8 @@ locals {
   secrets = yamldecode(sops_decrypt_file("${get_terragrunt_dir()}/secrets.yaml"))
 }
 
-dependency "cert_issuers" {
-  config_path  = "../kube_cert_issuers"
+dependency "certificates" {
+  config_path  = "../kube_certificates"
   skip_outputs = true
 }
 

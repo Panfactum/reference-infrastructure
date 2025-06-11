@@ -125,8 +125,8 @@ inputs = {
       a_records = [
         // Softr client portal
         {
-          subdomain = "portal."
-          records   = ["35.158.87.123"]
+          subdomain = ""
+          records   = ["31.43.160.6", "31.43.161.6"]
         }
       ]
       mx_records = [
@@ -138,6 +138,10 @@ inputs = {
         }
       ]
       cname_records = [
+        {
+          subdomain = "www."
+          record    = "sites.framer.app"
+        },
         {
           subdomain = "gmail."
           record    = "ghs.googlehosted.com"

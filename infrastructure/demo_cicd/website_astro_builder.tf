@@ -96,7 +96,7 @@ module "astro_builder_workflow" {
       {
         name = "sitemap_url"
         description = "The URL of the sitemap to scrape"
-        default = "https://website2.panfactum.com/sitemap-index.xml"
+        default = "https://docs.panfactum.com/sitemap-index.xml"
       },
 
       {

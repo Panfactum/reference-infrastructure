@@ -244,7 +244,7 @@ module "bastion_image_builder_workflow" {
   }
 }
 
-resource "kubectl_manifes" "bastion_workflow_template" {
+resource "kubectl_manifest" "bastion_workflow_template" {
   yaml_body = yamlencode({
     apiVersion = "argoproj.io/v1alpha1"
     kind = "WorkflowTemplate"

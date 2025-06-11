@@ -22,13 +22,7 @@ module "website" {
   }
   bucket_name = "pf-website-astro"
   description = "Hosts the new Astro Panfactum website"
-  domains      = ["panfactum.com", "www.panfactum.com"]
-
-  redirect_rules = [{
-    source = "https?://www.panfactum.com(/.*)"
-    target = "https://panfactum.com$1"
-    permanent = true
-  }]
+  domains      = ["docs.panfactum.com"]
 }
 
 module "installer" {
