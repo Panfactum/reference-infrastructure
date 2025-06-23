@@ -210,9 +210,42 @@ inputs = {
         {
           subdomain = "bounce."
           record    = "custom-email-domain.stripe.com."
+        },
+
+        // Beehiiv (Newsletters)
+        {
+          subdomain = "em8269.newsletters."
+          record    = "u52680821.wl072.sendgrid.net."
+        },
+        {
+          subdomain = "255._domainkey.newsletters"
+          record    = "255.domainkey.u52680821.wl072.sendgrid.net."
+        },
+        {
+          subdomain = "2552._domainkey.newsletters."
+          record    = "2552.domainkey.u52680821.wl072.sendgrid.net."
+        },
+        {
+          subdomain = "elink7cf.newsletters."
+          record    = "branded-link.beehiiv.com."
+        },
+        {
+          subdomain = "52680821.newsletters."
+          record    = "sendgrid.net."
+        },
+        {
+          subdomain = "investors."
+          record    = "cname.beehiiv.com."
         }
       ]
       txt_records = [
+        // Beehiiv (Newsletters)
+        {
+          subdomain = "newsletters."
+          records = [
+            "_beehiiv-authentication-c4797=5c0e73f2278b35bffdb0468f44830fbe0640830a"
+          ]
+        },
         // DMARC (email)
         {
           subdomain = "_dmarc."
